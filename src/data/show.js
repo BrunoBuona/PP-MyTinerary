@@ -53,7 +53,7 @@ const showList = [
         id: 'it3',
         hotelId: 'ho11',
         name: 'Chiyoda Cherry Blossom Matsuri',
-        description: 'YYotsuya and Iidabashi are areas that developed around the outer moat of the imperial palace. Nearby, in Kagurazaka, there is an old red light district with a photogenic atmosphere that evokes old Tokyo. The cobbled streets of yesteryear are preserved and there are restaurants with a long tradition with geishas, ​​as well as picturesque old cafes in buildings of historical value.',
+        description: 'Yotsuya and Iidabashi are areas that developed around the outer moat of the imperial palace. Nearby, in Kagurazaka, there is an old red light district with a photogenic atmosphere that evokes old Tokyo. The cobbled streets of yesteryear are preserved and there are restaurants with a long tradition with geishas, ​​as well as picturesque old cafes in buildings of historical value.',
         photo: 'https://awaken.com/wp-content/uploads/2019/06/25546580673_7a086ab421_o-770x513.jpg',
         price: 1999,
         date: new Date(2022, 12, 12),
