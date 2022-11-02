@@ -32,7 +32,7 @@ const showList = [
     {
         id: 'it4',
         hotelId: 'ho9',
-        name: 'Conviértete en una sesión de fotos de arte holandés en Amsterda',
+        name: 'Conviértete en una sesión de fotos de arte holandés en Amsterdam',
         description: 'Lleve a casa un recuerdo fotográfico de sus vacaciones en Ámsterdam cuando participe en esta sesión de fotos con un fotógrafo profesional. Elige entre algunas de las pinturas holandesas más famosas y vístete con un disfraz para imitar la imagen de tu sesión de fotos. Aléjese con dos impresiones, una ampliación y un correo electrónico con sus archivos de fotos originales',
         photo: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/71/45/90.jpg',
         price: 199,
@@ -40,7 +40,7 @@ const showList = [
         userId: 'user2',
     },
     {
-        id: 'it3',
+        id: 'it5',
         hotelId: 'ho11',
         name: 'Sanja Matsuri',
         description: 'Sanja Matsuri es uno de tres maravillosos festivales de verano que se realizan en Tokio. Se lleva a cabo a fines de mayo, y celebra la fundación del templo de Sensoji en Asakusa.',
@@ -50,7 +50,7 @@ const showList = [
         userId: 'user3',
     },
     {
-        id: 'it3',
+        id: 'it6',
         hotelId: 'ho11',
         name: 'Chiyoda Cherry Blossom Matsuri',
         description: 'Yotsuya e Iidabashi son zonas que se desarrollaron alrededor del foso exterior del palacio imperial. Muy cerca, en Kagurazaka, existe un antiguo barrio rojo de fotogénica atmósfera que evoca el viejo Tokio. Se conservan las callejuelas empedradas de antaño y existen restaurantes de larga tradición con geishas, así como pintorescos cafés antiguos en edificios de valor histórico.',
