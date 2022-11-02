@@ -2,7 +2,7 @@ let activity = [
     {
         id: "it1",
         citiId: "roma",
-        name: "visit the Coliseum",
+        name: "Visit the Coliseum",
         photo: ["https://www.experienciasviajeras.blog/wp-content/uploads/2019/06/Visitar-el-Coliseo-sin-colas2.jpg","https://www.findingtheuniverse.com/wp-content/uploads/2019/05/Rome-Colosseum-Guide_by_Laurence-Norah-2.jpg",""],
         description: "The Colosseum became the largest Roman amphitheatre, with an elliptical structure 188 meters long, 156 meters wide and 57 meters high. Made of brick and covered with travertine, it was divided into five levels with a capacity for more than 50,000 people.",
         price: 41,
@@ -42,7 +42,7 @@ let activity = [
     {
         id: "it5",
         citiId: "buenosAires",
-        name: "El Ateneo grand splendid",
+        name: "Ateneo Grand Splendid",
         photo: ["https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/60/17/f3/img-20181106-140326-003.jpg?w=1200&h=-1&s=1","https://upload.wikimedia.org/wikipedia/commons/a/ac/Yenny_Ateneo_Grand_Splendid.jpg","https://www.metro951.com/wp-content/uploads/2019/01/Librer%C3%ADas-del-Mundo-El-Ateneo-Grand-Splendid-en-Buenos-Aires-Argentina.png"],
         description: "The Ateneo Grand Splendid tops several records: it is the largest bookstore in South America, it was chosen by the British newspaper The Guardian as the second best bookstore in the world and the American magazine National Geographic highlighted it as the most beautiful. Hundreds of people pass through here every day who never cease to marvel at the spectacle that surrounds them.",
         price: 0,
@@ -62,7 +62,7 @@ let activity = [
     {
         id: "it7",
         citiId: "londres",
-        name: "British museum",
+        name: "British Museum",
         photo: ["https://totenart.com/noticias/wp-content/uploads/2020/01/totenart-Museo-Britanico-Londres-1.jpg","https://lp-cms-production.imgix.net/2019-06/46e3203d7997df00a49d372a75086215-british-museum.jpg","https://static.standard.co.uk/s3fs-public/thumbnails/image/2017/12/18/14/daniel-rauber-394864.jpg?width=968"],
         description: "The British Museum is a museum in the city of London, United Kingdom, one of the most important and visited museums in the world. Its collections cover diverse fields of human knowledge, such as history, archaeology, ethnography and art.",
         price: 0,
@@ -72,7 +72,7 @@ let activity = [
     {
         id: "it8",
         citiId: "londres",
-        name: "london eye",
+        name: "London Eye",
         photo: ["https://cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/TVGWKLDNB5EUHDMFLW5VR3AZV4.jpg","https://www.infoviajera.com/wp-content/uploads/2017/08/London_Eye_Capsula_Londres_Entrada_Vista_Westminster_Southbank.jpg","https://blog.laminasyaceros.com/hubfs/Marco%20Baylon/LYA%20london-eye-wallpaper_may_2018%201.jpg"],
         description: "The London Eye is the fourth tallest structure in London. It is 135m high, the same height as 64 red phone booths stacked on top of each other. The circumference of the wheel is 424 m, which is equivalent to 201 phone booths",
         price: 37,
@@ -82,7 +82,7 @@ let activity = [
     {
         id: "it9",
         citiId: "nuevaYork",
-        name: "statue of Liberty",
+        name: "Statue of Liberty",
         photo: ["https://www.turismonuevayork.com/wp-content/uploads/2014/09/La-Estatua-de-la-Libertad-en-Nueva-York.jpg","https://images.ecestaticos.com/TuqRoPYYv19bT6KRDFSCB5ZUAW0=/0x0:0x0/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Ffe3%2Fd02%2F65a%2Ffe3d0265ab65fdb133ce36d018fb4507.jpg","https://images.ecestaticos.com/esFQDHEZdUNMUTmFXecDNtrbfdc=/254x2:2272x1515/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Ff16%2Fd53%2Fdd1%2Ff16d53dd1c68a694db86a74064081b43.jpg"],
         description: "The Statue of Liberty measures 93 meters (including its pedestal), weighs 225 tons, is covered by a layer of copper 2.38 millimeters thick (less than the thickness of two pennies), and its color is light green due to the result of the natural erosion of copper.",
         price: 25,
@@ -92,7 +92,7 @@ let activity = [
     {
         id: "it10",
         citiId: "nuevaYork",
-        name: "Brooklyn bridge",
+        name: "Brooklyn Bridge",
         photo: ["https://static.anuevayork.com/wp-content/uploads/2020/01/07015753/Consejos-para-cruzar-el-puente-de-Brooklyn-a-pie-o-en-bici.jpg","https://www.ngenespanol.com/wp-content/uploads/2018/08/10-datos-curiosos-sobre-el-Puente-de-Brooklyn-en-Nueva-York.jpg","https://astelus.com/wp-content/viajes/puente-brooklyn-nueva-york.jpg"],
         description: "It was built between 1870 and 1883, and at the time of its inauguration it was the largest suspension bridge in the world (it measures 1,825 meters long, and the span between pillars is 486.3 meters), a record span until 1889 when it was build the Forth Bridge, with a maximum span of 521 m.",
         price: 0,
