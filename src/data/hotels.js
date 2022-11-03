@@ -1,4 +1,4 @@
-const hotelList = [
+export const hotels = [
     {
         id: 'ho1',
         name: 'Urban Garden Hotel',
