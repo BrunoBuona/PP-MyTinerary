@@ -6,9 +6,11 @@ export default function App() {
       <>
       <Routes>
         <Route path="*" element={<NotFound/>} />
-
+        
       </Routes>
     </>
   );
 }
+
+export default App;
 
