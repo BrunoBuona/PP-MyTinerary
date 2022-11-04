@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import {LoginForm} from "./components/LoginForm/LoginForm";
-import {NotFound} from "./components/NotFound/NotFound";
+import {NotFound} from "./components/404/NotFound.jsx";
 
 function App() {
   return (

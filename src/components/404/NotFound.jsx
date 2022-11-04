@@ -2,7 +2,7 @@ import React from "react";
 import './NotFound.css';
 import {Footer} from "../../layouts/Footer/Footer.jsx";
 
-export default function NotFound() {
+export function NotFound() {
     return (
         <>
         <div className="maincontainer">
