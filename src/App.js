@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import {LoginForm} from "./components/LoginForm/LoginForm";
+import {NotFound} from "./components/NotFound/NotFound";
 
-export default function App() {
+function App() {
   return (
       <>
       <Routes>
