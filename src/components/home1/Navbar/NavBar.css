@@ -16,13 +16,20 @@
 
 .ancorLink{
     text-decoration: none;
-    color: rgb(21, 21, 21);
+    color: rgb(255, 255, 255);
     background-color: rgb(152, 152, 152);
     border: 1px solid rgb(0, 0, 0);
     border-radius: .5rem;
     padding: .3rem;
+    position: relative;
+    z-index: 99;
+}
+
+.ancorLink:hover{
+    background-color: azure;
+    color: black;
 }
 
 .img{
-    border-radius: 1rem;
+    border-radius: .7rem;
 }
