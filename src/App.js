@@ -6,8 +6,11 @@ export default function App() {
       <>
       <Routes>
         <Route path="/login" element={<LoginForm/>} />
+        <Route path="*" element={<NotFound/>} />
       </Routes>
     </>
   );
 }
+
+export default App;
 
