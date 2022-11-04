@@ -1,0 +1,146 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 95vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter:contrast(100%);
+    background-image: url("https://coolhdwall.com/storage/202101/mountain-nature-lake-landscape-scenery-2k-wallpaper-2560x1440.jpg")
+}
+.title{
+    font-size: 3rem;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 4px rgb(0, 0, 0);
+    filter: brightness(100%);
+}
+.title2{
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    text-shadow: 4px 4px rgb(0, 0, 0);
+    margin-bottom: 1rem;
+    filter: brightness(100%);
+}
+.form-body{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 0.6rem;
+    justify-content: center;
+    width: 30%;
+    height: 500px;
+    background-color: #d7e3ff55;
+    box-shadow: 3px 3px 11px rgba(3, 3, 3, 0.771);
+
+    
+
+}
+
+.form-body > *{
+    padding: 5px;
+    
+}
+
+.form__label{
+    padding: 3px;
+    font-size: 1.3rem;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 2px rgb(20, 10, 10);
+}
+
+.form__input{
+    padding: 3px;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 3px 3px 5px rgba(3, 3, 3, 0.654);
+    text-align: center;
+}
+
+.registerZone{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+
+}
+.submit2{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 40px;
+    padding: 4px;
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    
+}
+.submit2:hover{
+    border: 2px solid rgb(0, 0, 0);
+    color: rgb(246, 127, 0);
+    font-weight: bold;
+    
+}
+
+@media screen and (max-width: 900px) {
+    .form-body{
+        gap: 0.4rem;
+        justify-content: center;
+        width: 60%;
+        height: 300px;
+        background-color: #d7e3ff55;
+        box-shadow: 3px 3px 11px rgba(3, 3, 3, 0.771);
+    
+        
+    
+    }
+}
+@media screen and (max-width: 500px) {
+    .form-body{
+        gap: 0.4rem;
+        width: 90%;
+        height: 300px;
+        
+    
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    .form-body{
+        gap: 0.4rem;
+        width: 30%;
+        height: 600px;
+    }
+    .title{
+        font-size: 68px;
+    }
+    .title2{
+        font-size: 58px;
+    }
+    
+.form__label{
+
+    font-size: 100px;
+}
+
+.form__input{
+    font-size:2.4rem;
+    padding: 5px;
+    margin: 5px;
+}
+.submit2{
+    border: 2px solid rgb(0, 0, 0);
+    font-size: 2rem;
+    padding: 15px;
+}
+}
