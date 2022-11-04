@@ -28,14 +28,14 @@ function LoginForm(){
           type="email"
           autoComplete='current-email'
           placeholder="Email"
-          className='form-input'
+          className='form__input'
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
           autoComplete='on'
           placeholder="Password"
-          className='form-input'
+          className='form__input'
           onChange={(e) => setPassword(e.target.value)}
         />
       <div className="submit">
