@@ -1,0 +1,140 @@
+.active {
+  border: 2px solid #ffaa00;
+  transform: scale(1.3);
+  transition: all 300ms;
+}
+
+.carrousel {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.slideshow {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.mainImg {
+  transition: all 500ms;
+  height: 55vw;
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+}
+
+.actions {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions button {
+  background: #0000003d;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  padding-top: 5px;
+  font-size: 5vw;
+}
+
+.actions button:active {
+  background: #000000a2;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  padding-top: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  padding-top: 5px;
+}
+.tumbnail {
+  max-width: 100%;
+  flex-grow: 1;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contenedor-carrousel {
+  display: flex;
+  background-color: rgb(22, 22, 22);
+  height: 90vw;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.contenedor-carrousel2 {
+  display: flex;
+  background-color: rgb(22, 22, 22);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 2000px) {
+  .contenedor-carrousel {
+    height: 90vw;
+  }
+  .tumbnail > img {
+    width: 11vh;
+    height: 12vh;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .tumbnail > img {
+    width: 8vh;
+    height: 8vh;
+  }
+  .contenedor-carrousel{
+    height: 100vh;
+  }
+  .contenedor-carrousel2{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .carrousel {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .mainImg {
+    width: 100vw;
+    height: 55vw;
+  }
+  .actions {
+    display: none;
+  }
+
+  .tumbnail > img {
+    display: flex;
+    width: 6vh;
+    height: 6vh;
+  }
+  .tumbnail {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 425px) {
+  .tumbnail > img {
+    display: flex;
+    width: 3.5vh;
+    height: 3.5vh;
+  }
+}
