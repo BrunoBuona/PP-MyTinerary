@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./NavBar.css";
 
 export default function NavBar(props) {
-    let { name1, name2, Link, title } = props;
+    let { name1, name2, Link } = props;
     let [mostrarOcultar, setMostrarOcultar] = useState(false);
     //funcion para mostrar el menu
     let hide = () => {
@@ -13,7 +13,7 @@ export default function NavBar(props) {
         <div>
             {mostrarOcultar ? (
                 <>
-                    <p onClick={hide}>{title}</p>
+                    <img className="img" onClick={hide} src="https://e7.pngegg.com/pngimages/363/898/png-clipart-equals-sign-computer-icons-equality-symbol-symbol-miscellaneous-rectangle.png"  width="40" height="30"alt="-" />
                     <ul className="ul">
                         <li className="a">
                             <a className="ancorLink" href={Link}>{name1}</a>
@@ -24,7 +24,7 @@ export default function NavBar(props) {
                     </ul>
                 </>
             ) : (
-                <p onClick={hide}>{title}</p>
+                <img className="img" onClick={hide} src="https://e7.pngegg.com/pngimages/363/898/png-clipart-equals-sign-computer-icons-equality-symbol-symbol-miscellaneous-rectangle.png"  width="40" height="30" alt="-" />
             )}
         </div>
     );

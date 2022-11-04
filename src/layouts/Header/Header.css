@@ -28,9 +28,15 @@
 }
 
 .bottonHome:hover{
-    background-color: rgba(255, 255, 255, 0.199);
+    background-color: rgba(0, 0, 0, 0.199);
     border-radius: .3rem;
 }
+
+.parraf{
+  padding-bottom: .1rem;
+  color: rgba(255, 255, 255, 0.699);
+}
+
 
   .main{
     background-image:url("https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80");
