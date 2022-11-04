@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { Footer } from '../../layouts/Footer/Footer';
 import './LoginForm.css';
+import {Header} from "../../layouts/Header/Header.jsx";
 
 function LoginForm(){
   const [email, setEmail] = useState("");
@@ -20,6 +21,7 @@ function LoginForm(){
 
   return (
     <>
+    <Header/>
     <form className="form">
       <div className="form-body">
         <h1 className='title'>MyTinerary</h1>
