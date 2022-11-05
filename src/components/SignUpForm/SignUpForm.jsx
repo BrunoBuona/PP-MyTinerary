@@ -1,9 +1,9 @@
 import "./SignUpForm.css"
 import React, { useState, useEffect} from "react";
 
-/* import { useNavigate } from "react-router-dom"; */
+
 function SignUpForm() {
-/*     const navigate = useNavigate(); */
+
     const getRecord = () => {
         let data = localStorage.getItem("registration");
         if(data){
@@ -19,11 +19,7 @@ function SignUpForm() {
         let myObject = { name,surName,country,mobileNumber,email,password }
         setRegistration([...registration, myObject]);
         limpiarFormulario();
-/*         localStorage.setItem(
-            "user",
-            JSON.stringify({ name, surName, country, mobileNumber, email, password })
-        ); */
-/*         navigate("login"); */
+
     };
     
     const limpiarFormulario = () => {
@@ -107,10 +103,10 @@ function SignUpForm() {
                         required 
                     />
                     <div className="submitSing">
-                        <button className="submit2Sing" /* onClick={submit} */ >
+                        <button className="submit2Sing">
                             Register
                         </button>
-{/*                         <p className="error">{error}</p> */}
+
                     </div>
                 </div>
             </form>
