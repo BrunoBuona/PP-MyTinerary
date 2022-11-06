@@ -9,12 +9,12 @@ function SignUp() {
     <div className="contain">
       <SignUpForm />
       <div className="containButtons">
-      <button className="buttonGooG"><img src="https://img.icons8.com/color/28/null/google-logo.png" alt="-" /> Sign in with Google      
+      <button className="buttonGooG"><img src="https://img.icons8.com/color/28/null/google-logo.png" alt="-" /> Sign up with Google      
       </button>
         <h3 className="textPregt">Already has an account?</h3>
         <div className="buttons-form">
           <NavLink to="/login">
-            <button className="buttonsignin">access your account</button>
+            <button className="buttonsignin">Access your account</button>
           </NavLink>
         </div>
       </div>

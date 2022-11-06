@@ -18,12 +18,12 @@ function NavBar(props) {
                 <>
                     <img className="img" onClick={hide} src="https://e7.pngegg.com/pngimages/363/898/png-clipart-equals-sign-computer-icons-equality-symbol-symbol-miscellaneous-rectangle.png"  width="40" height="30"alt="-" />
                     <ul className="ul">
-                    <NavLink to="/SignUp">
+                    <NavLink to="/SignIn">
                         <li className="a">
                             <a className="ancorLink" href="-">{name1}</a>
                         </li>
                     </NavLink>
-                    <NavLink to="/login">
+                    <NavLink to="/SignUp">
                         <li className="b">
                             <a className="ancorLink"  href="-">{name2}</a>
                         </li>

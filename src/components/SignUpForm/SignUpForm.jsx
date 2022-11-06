@@ -51,7 +51,7 @@ function SignUpForm() {
         <>
             <form onSubmit={handleSubmit} className="formSing" id="miFormulario">
                 <div className="form-bodySing">
-                    <h2 className="title2Sing">Sing-Up</h2>
+                    <h2 className="title2Sing">Sign Up</h2>
                     <input
                         id="name"
                         name="name"
@@ -65,7 +65,7 @@ function SignUpForm() {
                         id="surName"
                         name="SurName"
                         type="text"
-                        placeholder="SurName"
+                        placeholder="Surname"
                         className="form__input"
                         onChange={(e) => setSurName(e.target.value)}
                         required 
