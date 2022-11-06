@@ -9,7 +9,7 @@ function Header() {
         <header className="header">
             <div className="ancors">
                 <div className="bottonHome">
-                    <p className="parraf">Pgiages</p>
+                    <p className="parraf">Pages</p>
                     <NavBar2  name3="Hotels" name4="Home" name5="Cities"/>
                 </div>
                 <div className="bottonHome">
