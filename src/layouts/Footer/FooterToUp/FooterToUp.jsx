@@ -3,7 +3,7 @@ import '../Footer.css'
 function FooterToTop() {
     return(
     <div className="toTop">
-        <a href="#" clasNames="btn-flotante">▲</a>
+        <a href="#" className="btn-flotante">▲</a>
     </div>
     )
 }
