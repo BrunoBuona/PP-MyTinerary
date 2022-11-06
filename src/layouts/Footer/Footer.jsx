@@ -10,8 +10,8 @@ function Footer() {
         <footer className="footer">
             <div className="secondNavigator">
             <FooterNav nombre="Home"   Link="/"/>
-            <FooterNav nombre="Cities" Link="/"/>
-            <FooterNav nombre="Hotels" Link="/"/>
+            <FooterNav nombre="Cities" Link="/Cities"/>
+            <FooterNav nombre="Hotels" Link="/Hotels"/>
             </div>
             <FooterToTop/>
         </footer>
