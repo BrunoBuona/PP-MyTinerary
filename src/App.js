@@ -1,17 +1,23 @@
 import { Route, Routes } from "react-router-dom";
 import {LoginForm} from "./components/LoginForm/LoginForm";
 import {NotFound} from "./components/404/NotFound.jsx";
+import {Home} from "./layouts/Home"
+import {Hoome} from "./pages/Hoome"
+import {SignUp} from "./pages/signUp/SignUp"
 
 function App() {
   return (
-      <>
+    <>
+    <Home>
       <Routes>
-        <Route path="/login" element={<LoginForm/>} />
+        <Route path="/" element={<Hoome/>}/>
+        <Route path="/login" element={<LoginForm/>}/>
         <Route path="*" element={<NotFound/>} />
+        <Route path="/sigup" element={<SignUp/>} />
       </Routes>
+    </Home>
     </>
   );
 }
 
 export default App;
-

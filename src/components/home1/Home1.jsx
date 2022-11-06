@@ -1,5 +1,5 @@
 import React from 'react'
-import CallToAction from '../../components/home1/CallToAction/CallToAction'
+import CallToAction from './CallToAction/CallToAction'
 
 export default function Main() {
   return (
