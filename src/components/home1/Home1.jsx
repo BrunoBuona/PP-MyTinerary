@@ -1,7 +1,7 @@
 import React from 'react'
 import CallToAction from './CallToAction/CallToAction'
 
-export default function Main() {
+export default function Home1() {
   return (
     <main className="main">
         <div className="contenedor-principal">
@@ -15,4 +15,4 @@ export default function Main() {
     </main>
   )
 }
-export {Main}
+export {Home1}
