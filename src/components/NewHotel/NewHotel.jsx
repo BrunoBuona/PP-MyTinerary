@@ -1,11 +1,6 @@
-
 import './NewHotel.css'
-
 import React, { useState } from 'react';
-
-import { Link } from 'react-router-dom';
 import { hotels } from '../../data/hotels';
-
 
 function NewHotels() {
     const [name, setName] = useState('');
