@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './LoginForm.css';
+import { Link } from 'react-router-dom';
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ function LoginForm() {
       <form className="form">
         <div className="form-body">
           <h1 className='title'>MyTinerary</h1>
-          <h2 className='title2'>Log-In</h2>
+          <h2 className='title2'>Sign In</h2>
           <input
             type="email"
             autoComplete='current-email'
@@ -35,10 +36,21 @@ function LoginForm() {
           />
           <div className="submit">
             <button className='submit2' onClick={submit}>Login</button>
-            <button className='submit2' onClick={submit}>Login with Google</button>
+
+          </div>
+
+        </div>
+        <div className='registercontainer'>
+          <button className="buttonGooG"><img src="https://img.icons8.com/color/28/null/google-logo.png" alt="-" /> Sign in with Google</button>
+          <h3 className="textPregt">You dont have an account?</h3>
+          <div className="buttons-form">
+            <Link to="/SignUp">
+              <button className="buttonsignin">Register now!</button>
+            </Link>
           </div>
         </div>
       </form>
+
     </>
   );
 };

@@ -91,7 +91,14 @@
     font-weight: bold;
     
 }
-
+.registercontainer{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.4rem;
+}
 @media screen and (max-width: 900px) {
     .form-body{
         gap: 0.4rem;
