@@ -2,7 +2,7 @@ import React from 'react'
 import AutoToTop from '../components/home1/AutoToTop/AutoToTop'
 import { Header } from './Header/Header'
 import { Footer } from './Footer/Footer'
-import './Home.css'
+import './Main.css'
 
 export default function Home(props) {
 
