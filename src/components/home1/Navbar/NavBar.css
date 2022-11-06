@@ -10,6 +10,11 @@
     top: 100px; 
 }
 
+.c{
+    position: absolute;
+    top: 200px; 
+}
+
 .ul{
         list-style: none;
 }
