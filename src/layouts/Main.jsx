@@ -4,7 +4,7 @@ import { Header } from './Header/Header'
 import { Footer } from './Footer/Footer'
 import './Main.css'
 
-export default function Home(props) {
+export default function Main(props) {
 
   return (
     <div className='Home'>  
@@ -15,4 +15,4 @@ export default function Home(props) {
     </div>
   )
 }
-export {Home}
+export {Main}
