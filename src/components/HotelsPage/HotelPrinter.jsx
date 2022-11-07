@@ -17,7 +17,7 @@ function HotelPrinter() {
             <div key={e.id+1} className="hotel">
                 <img className="card-top-img" src={getRandomImage(e.photo)} alt="hotel" />
                 <h3>{e.name}</h3>
-                <Link key={e.id} to={`/Details/${e.id}`}>See More</Link>
+                <Link key={e.id} to={`/detailshotels/${e.id}`}>See More</Link>
             </div>
      )})
     )

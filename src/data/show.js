@@ -1,4 +1,4 @@
-const showList = [
+export const showList = [
     {
         id: 'it1',
         hotelId: 'ho10',

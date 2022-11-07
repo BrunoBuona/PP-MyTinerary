@@ -7,6 +7,7 @@ import {SignUp} from "./pages/signUp/SignUp"
 import {NewHotels} from "./components/NewHotel/NewHotel.jsx"
 import { NewCity } from "./components/NewCity/NewCity"
 import { HotelsPage } from "./components/HotelsPage/Hotels";
+import {DetailsH} from "./components/DetailsHotel/DetailsHotels"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp/>} />
         <Route path="/NewHotel" element={<NewHotels/>} />
         <Route path="/NewCity" element={<NewCity/>} />
+        <Route path="/detailshotels/:eId" element={<DetailsH/>}/>
       </Routes>
     </Main>
     </>
