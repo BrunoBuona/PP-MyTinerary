@@ -13,7 +13,7 @@ function SignUp() {
       </button>
         <h3 className="textPregt">Already has an account?</h3>
         <div className="buttons-form">
-          <NavLink to="/login">
+          <NavLink to="/SignIn">
             <button className="buttonsignin">Access your account</button>
           </NavLink>
         </div>
