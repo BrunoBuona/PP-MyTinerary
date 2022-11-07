@@ -8,17 +8,18 @@ hotels.sort((a, b) => a.name.localeCompare(b.name))
 
 
 
-function ascendentOrderer() {
-     hotels.sort((a, b) => a.name.localeCompare(b.name))
-     console.log(hotels)
 
-}
-function descendentOrderer() {
-     hotels.sort((a, b) => b.name.localeCompare(a.name) )
-     console.log(hotels)
-}
-
+let filtradosPorSearch = []
 export function HotelsPage(e) {
+    function ascendentOrderer() {
+         filtradosPorSearch.sort((a, b) => a.name.localeCompare(b.name))
+         console.log(hotels)
+    
+    }
+    function descendentOrderer() {
+         filtradosPorSearch.sort((a, b) => b.name.localeCompare(a.name) )
+         console.log(hotels)
+    }
     const [search, setSearch] = useState('')
     const [order, setOrder] = useState('ascendent')
     if(search !== ''){
@@ -30,7 +31,6 @@ export function HotelsPage(e) {
     else if(order === 'descendente'){
         descendentOrderer()
     } 
-    let filtradosPorSearch = []
     return (
         <>
 
