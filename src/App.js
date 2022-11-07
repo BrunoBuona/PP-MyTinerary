@@ -5,6 +5,7 @@ import {Main} from "./layouts/Main"
 import {Home} from "./pages/Home"
 import {SignUp} from "./pages/signUp/SignUp"
 import {NewHotels} from "./components/NewHotel/NewHotel.jsx"
+import { NewCity } from "./components/NewCity/NewCity"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="*" element={<NotFound/>} />
         <Route path="/SignUp" element={<SignUp/>} />
         <Route path="/NewHotel" element={<NewHotels/>} />
+        <Route path="/NewCity" element={<NewCity/>} />
       </Routes>
     </Main>
     </>
