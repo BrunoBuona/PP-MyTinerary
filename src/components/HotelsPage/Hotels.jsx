@@ -4,12 +4,12 @@ import { hotels } from '../../data/hotels';
 import { HotelPrinter } from "./HotelPrinter.jsx";
 import { useState } from 'react';
 // esto es el estado inicial de la app
-hotels.sort((a, b) => a.name.localeCompare(b.name))
 
 
 
 
 let filtradosPorSearch = []
+filtradosPorSearch=hotels.sort((a, b) => a.name.localeCompare(b.name))
 export function HotelsPage(e) {
     function ascendentOrderer() {
          filtradosPorSearch.sort((a, b) => a.name.localeCompare(b.name))
