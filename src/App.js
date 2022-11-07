@@ -6,6 +6,7 @@ import {Home} from "./pages/Home"
 import {SignUp} from "./pages/signUp/SignUp"
 import {NewHotels} from "./components/NewHotel/NewHotel.jsx"
 import { NewCity } from "./components/NewCity/NewCity"
+import { HotelsPage } from "./components/HotelsPage/Hotels";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
     <Main>
       <Routes>
         <Route path="/" element={<Home/>}/>
+        <Route path="/Hotels" element={<HotelsPage/>}/>
         <Route path="/SignIn" element={<LoginForm/>}/>
         <Route path="*" element={<NotFound/>} />
         <Route path="/SignUp" element={<SignUp/>} />
