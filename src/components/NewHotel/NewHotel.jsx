@@ -19,9 +19,9 @@ function NewHotels() {
     };
     return (
         <>
-            <form className="form-hotel">
-                <div className="form-body">
-                    <h1 className='title'>New Itinerary</h1>
+            <form className="form-hotel2">
+                <div className="form-body2">
+                    <h1 className='title'>New Hotel</h1>
                     <h2 className='title2'>¡Create Hotel Card!</h2>
                     <input
                         type="text"
@@ -41,7 +41,7 @@ function NewHotels() {
                         className='form__input'
                         onChange={(e) => setCapacity(Number(e.target.value))}
                     />
-                    <select onChange={e => setCity(e.target.value)}>
+                    <select className='selecthotels' onChange={e => setCity(e.target.value)}>
                         <option value="0">Select a city</option>
                         {names.map((e, i) => <option key={i} value={e}>{e}</option>)}
                     </select>
