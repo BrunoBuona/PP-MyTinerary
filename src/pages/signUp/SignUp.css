@@ -1,0 +1,46 @@
+.contain{
+    padding: 1rem;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter:contrast(100%);
+    background-image: url("https://coolhdwall.com/storage/202101/mountain-nature-lake-landscape-scenery-2k-wallpaper-2560x1440.jpg")
+}
+
+.containButtons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+    gap: .8rem;
+}
+
+.textPregt{
+    color: azure;
+}
+
+.buttonGooG{
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    background-color: rgba(242, 242, 242, 0.495);
+}
+
+
+.buttonsignin{
+    background-color: rgba(0, 0, 0, 0.21);
+    text-decoration: none;
+    font-size: 1rem;
+    border: 1px solid rgb(2, 2, 2);
+    padding: 1rem;
+    color: rgb(221, 175, 114);
+    border-radius: .5rem;
+}
+
+.buttonsignin:hover{
+    background-color: rgba(240, 248, 255, 0.256);
+}
+

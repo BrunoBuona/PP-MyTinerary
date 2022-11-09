@@ -1,0 +1,62 @@
+   .form-body2{
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         width: 70vh;
+         height: 60vh;
+         gap: 10px;
+         background-color: #f5f5f57a;
+   }
+   .form-select2{
+      width: 200px;
+      text-align: center;
+      height: 5vh;
+      font-size: 18px;
+      font-weight: bold;
+   }
+   .form-hotel2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 95vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter:contrast(100%);
+    background-image: url("https://images6.alphacoders.com/349/thumb-1920-349835.jpg")
+}
+
+@media screen and (min-width:1500px) {
+      .selecthotels{
+            font-size: 2vh;
+            width: 200px;
+      }
+}
+@media screen and (max-width: 800px){
+      .form-body2{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 400px;
+            height: 350px;
+            gap: 10px;
+            font-size: 6vh;
+            background-color: #f5f5f57a;}
+}
+@media screen and (max-width: 500px){
+      .form-body2{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 60vh;
+            gap: 10px;
+            font-size: 2vh;
+            background-color: #f5f5f57a;}
+}
