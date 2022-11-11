@@ -8,6 +8,8 @@ import {NewHotels} from "./components/NewHotel/NewHotel.jsx"
 import { NewCity } from "./components/NewCity/NewCity"
 import { HotelsPage } from "./components/HotelsPage/Hotels";
 import {DetailsH} from "./components/DetailsHotel/DetailsHotels"
+import {Cities2} from "./components/Cities/Cities"
+import DetailsC from "./components/DetailsCities/DitailsCities"
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
         <Route path="/NewHotel" element={<NewHotels/>} />
         <Route path="/NewCity" element={<NewCity/>} />
         <Route path="/detailshotels/:eId" element={<DetailsH/>}/>
+        <Route path="/cities" element={<Cities2/>}/>
+        <Route path="/detailscities/:eId" element={<DetailsC/>}/>
       </Routes>
     </Main>
     </>

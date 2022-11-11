@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+}
+.main-details-City{
+    min-height: 50vh;
+    background-color: rgb(22, 22, 22);
+
+}
+.main-space{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+    margin: 2rem;
+}
+.show-space{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+.MainHotel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 80vh;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.left-mh{
+    width: 50%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.img-mh{
+    height: 50vh;
+    width: 100%;
+}
+
+.right-mh{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    gap: 2rem;
+}
+
+
+.h3-actividades{
+    color: aliceblue;
+    text-align: center;
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 770px){
+    .main-details{
+        height: 10rem;
+        background-color: rgb(22, 22, 22);
+    }
+    .img-mh{
+        height: 50vh;
+        width: 200%;
+    }
+    .MainHotel{
+        flex-direction: column;
+    }
+    .right-mh{
+        width: 100%;
+    }
+    .img-mh {
+        height: 30vh;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .main-details{
+        height: auto;
+        background-color: rgb(22, 22, 22);
+    
+    }
+}
+@media screen and (min-width: 2000px) {
+    h1{
+        font-size: 44px;
+    }
+    h3{
+        font-size: 24px
+    }
+    p{
+        font-size: 23px;
+    }
+}
