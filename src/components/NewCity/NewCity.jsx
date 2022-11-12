@@ -1,7 +1,7 @@
 import './NewCity.css'
 import React, { useState } from 'react';
 import axios from 'axios';
-import {URL} from '../../api/url' 
+import {BASE_URL} from '../../api/url' 
 function NewCity() {
     const [name, setName] = useState('');
     const [continent,  setContinent] = useState('')
@@ -14,7 +14,7 @@ function NewCity() {
             alert("Please fill in all fields");
         } else {
             let newCity = { name,continent,photo,population,userId}
-            axios.post(`${URL}/api/cities`,newCity)
+            axios.post(`${BASE_URL}/api/cities`,newCity)
             .then(res => {
                 console.log(res);
             })
