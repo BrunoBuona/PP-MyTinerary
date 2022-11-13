@@ -24,7 +24,7 @@ export function HotelsPage(e) {
         console.log(hotels)
     }
     const [search, setSearch] = useState('')
-    const [order, setOrder] = useState('ascendent')
+    const [order, setOrder] = useState('asc')
     if (search !== '') {
         console.log(search)
     }
