@@ -1,21 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { cities } from '../../data/cities.js'
 
 
 
-function CitiesPrinter() {
 
-    const getHotelList = cities.map(e => e)
+function CitiesPrinter(props) {
+    let { name, img, id } = props
     return (
-            getHotelList.map(e=>{
-            return(  
-            <div className="hotel">
-                <img className="card-top-img" src={e.photo} alt="hotel" />
-                <h3>{e.name}</h3>
-                <Link to={`/detailscities/${e.id}`}>See More</Link>
-            </div>
-     )})
+        <div className="cities">
+            <img className="card-top-img" src={img} alt={name} />
+            <h3>{name}</h3>
+            <Link to={`/detailscities/${id}`}>See More</Link>
+        </div>
     )
 }
 export { CitiesPrinter }

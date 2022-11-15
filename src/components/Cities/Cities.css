@@ -65,11 +65,15 @@
     color: rgb(255, 255, 255);
 
 }
+.cardt-not{
+    text-align: center;
+    height: 100vh;
+}
 .contain-check{
     display: flex;
     gap: 2rem;
 }
-.hotel>a{
+.cities>a{
     color: rgb(255, 149, 0);
     text-decoration: none;
 
