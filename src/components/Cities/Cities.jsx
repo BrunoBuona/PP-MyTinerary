@@ -1,30 +1,47 @@
 import React, { useState } from "react";
 import "./Cities.css";
 import { CitiesPrinter } from "./CitiesPrinter";
-import { Checkbox } from "../checkbox/Checkbox";
-import InputSearch from "../inputSearch/InputSeach"
 import axios from "axios";
 import { useEffect } from "react";
 import { BASE_URL } from "../../api/url";
+import { cities } from "../../data/cities";
 
-function Cities2() {
-    let [cities, setCities] = useState([])
-    let [inputSeach, setInputSeach] = useState('')
+function Cities3() {
 
-    useEffect(() => {
-        axios.get(`${BASE_URL}/api/cities/`)
-            .then((res) => setCities(res.data.response))
-            .catch((error) => console.log(error));
-    }, []);
+    const [cities2, setCities] = useState([])
+    const [checkbox, setCheckbox] = useState([])
+    const [inputSearch, setInputSearch] = useState('')
+    console.log(inputSearch);
+    function DataFeching ({
 
+        useEffect(() => {
+            axios.get(`${BASE_URL}/api/cities?name=${inputSearch}&continent=${filtroDeCheck}`)
+                .then(response => {
+                    setCities(response.data.response)})
+                .catch(error => console.log(error))
+        },[])
+    })
     
-    function search(e) {
-        setInputSeach(e.target.value)
-        let query = `${BASE_URL}/api/cities?name=${e.target.value}`
-        axios.get(query)
-            .then(response => setCities(response.data.response))
-            .catch(error => console.log(error))
+
+    let filtroDeCheck = []
+    function Checkbox() {
+        function capturacheck(e) {
+            filtroDeCheck = filtroDeCheck.concat(e.target.value)
+            console.log(filtroDeCheck);
+        }
+        let continentes = Array.from(new Set(cities.map(e => e.continent)));
+        console.log(continentes);
+        return continentes.map((e) => {
+            return (
+                <label>
+                    {e}
+                    <input onChange={e => capturacheck(e)} type="checkbox" value={e} />
+                </label>
+            );
+        });
     }
+
+
 
     function printCards(evento) {
         return evento.map((e) => (
@@ -41,18 +58,18 @@ function Cities2() {
                     <div className="select-container">
                         <label className="searchText">¡Search by Continent!</label>
                         <div>
-                            <Checkbox/>
+                            <Checkbox />
                         </div>
                     </div>
                     <div className="search-container">
-                        <InputSearch setchange={search} dato="search" type="text" />
+                        <input type="text" onChange={e=> {setInputSearch(e.target.value)}} />
                     </div>
                 </div>
-                {cities.length > 0 ? (
-                    printCards(cities)
+                {cities2.length > 0 ? (
+                    printCards(cities2)
                 ) : (
                     <div className="cardt-not">
-                        <h2>It was not found {inputSeach}</h2>
+{/*                         <h2>It was not found {inputSeach}</h2> */}
                     </div>
                 )}
             </div>
@@ -60,4 +77,4 @@ function Cities2() {
     );
 }
 
-export { Cities2 };
+export { Cities3 };

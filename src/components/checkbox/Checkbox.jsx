@@ -2,9 +2,10 @@ import React from "react";
 import { cities } from "../../data/cities";
 
 function Checkbox() {
+    let filtroDeCheck = []
     function capturacheck(e) {
-        let filtroDeCheck = cities.filter(evento => evento.continent.includes(e.target.value))
-        filtroDeCheck.concat(filtroDeCheck)
+        filtroDeCheck = filtroDeCheck.concat(e.target.value)
+
         console.log(filtroDeCheck);
     }
     let continentes = Array.from(new Set(cities.map((e) => e.continent)));
