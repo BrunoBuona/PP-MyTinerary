@@ -12,6 +12,7 @@ function NavBar(props) {
         setMostrarOcultar(!mostrarOcultar);
     };
 
+    
     return (
         <div>
             {mostrarOcultar ? (
@@ -33,12 +34,9 @@ function NavBar(props) {
                 </>
             ) : (
                 <img className="img" onClick={hide} src="https://e7.pngegg.com/pngimages/363/898/png-clipart-equals-sign-computer-icons-equality-symbol-symbol-miscellaneous-rectangle.png"  width="40" height="30" alt="-" />
-            )}
-
+                )}
         </div>
     );
-
-
 }
 export{NavBar}
 
