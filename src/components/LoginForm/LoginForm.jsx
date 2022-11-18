@@ -25,14 +25,19 @@ function LoginForm() {
             autoComplete='current-email'
             placeholder="Email"
             className='form__input'
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => {
+              setEmail(e.target.value)
+              e.preventDefault()}
+            }
           />
           <input
             type="password"
             autoComplete='on'
             placeholder="Password"
             className='form__input'
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) =>{
+              setPassword(e.target.value)
+              e.preventDefault()}}
           />
           <div className="submit">
             <button className='submit2' onClick={submit}>Login</button>
