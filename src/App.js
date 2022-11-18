@@ -23,7 +23,7 @@ function App() {
         <Route path="/SignUp" element={<SignUp/>} />
         <Route path="/NewHotel" element={<NewHotels/>} />
         <Route path="/NewCity" element={<NewCity/>} />
-        <Route path="/detailshotels/:eId" element={<DetailsH/>}/>
+        <Route path="/detailshotels/:id" element={<DetailsH/>}/>
         <Route path="/cities" element={<Cities3/>}/>
         <Route path="/detailscities/:id" element={<DetailsC/>}/>
       </Routes>
