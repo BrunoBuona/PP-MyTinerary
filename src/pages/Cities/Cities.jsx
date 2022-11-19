@@ -72,7 +72,7 @@ function Cities3() {
                     <div className="cities-container">
                     {
                         cities.length > 0 ?
-                        cities.map(i => <CitiesPrinter name={i.name} id={i._id} img={i.photo}/>):
+                        cities.map(i => <CitiesPrinter name={i.name} id={i._id} img={i.photo} />):
                         <div className="cardt-not">
                             <h3>It was not found {search}</h3>
                         </div>
