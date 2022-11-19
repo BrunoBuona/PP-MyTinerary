@@ -1,24 +1,31 @@
 import './NewCity.css'
-import React, { useState } from 'react';
-
+import React, { useRef } from 'react';
+import axios from 'axios';
+import {BASE_URL} from '../../api/url' 
 function NewCity() {
-    const [name, setName] = useState('');
-    const [continent,  setContinent] = useState('')
-    const [photo, setPhoto] = useState('');
-    const [population, setPopulation] = useState('');
 
+    let information = useRef()
+    let nameCity = useRef()
+    let continentCity = useRef()
+    let photoCity = useRef()
+    let populationCity = useRef()
 
-    const submit = () => {
-        if (name === "" || continent === "" || photo === "" || population === "") {
-            alert("Please fill in all fields");
-        } else {
-            let newCity = { name,continent,photo,population,}
-            localStorage.setItem("newCity", JSON.stringify(newCity));
+    function newCity(evento){
+        let newCity = {
+            name: nameCity.current.value,
+            continent: continentCity.current.value,
+            photo: photoCity.current.value,
+            population: populationCity.current.value,
+            userId: "636e884578fa70e8f8c471f7"
         }
-    };
+        axios.post(`${BASE_URL}/api/cities`,newCity)
+        information.current.reset()
+        evento.preventDefault()
+    }
+
     return (
         <>
-            <form className="form-hotel">
+            <form className="form-hotel"  onSubmit={newCity} ref={information}>
                 <div className="form-body">
                     <h1 className='title'>New Place</h1>
                     <h2 className='title2'>¡Create new City!</h2>
@@ -26,32 +33,32 @@ function NewCity() {
                         type="text"
                         placeholder="Name of city"
                         className='form__input'
-                        onChange={(e) => setName(e.target.value)}
+                        ref={nameCity}
                         required
                     />
                     <input
                         type="text"
                         placeholder="Continent"
                         className='form__input'
-                        onChange={(e) => setContinent(e.target.value)}
+                        ref={continentCity}
                         required
                     />
                     <input
                         type="text"
                         placeholder="Photo (URL)"
                         className='form__input'
-                        onChange={(e) => setPhoto(e.target.value)}
+                        ref={photoCity}
                         required
                     />
                     <input
-                        type="text"
+                        type="number"
                         placeholder="Population"
                         className='form__input'
-                        onChange={(e) => setPopulation(Number(e.target.value))}
+                        ref={populationCity}
                         required
                     />
                     <div className="submit">
-                        <button className='submit2' onClick={submit}>Create</button>
+                        <button className='submit2'/*  onClick={submit} */>Create</button>
                     </div>
                 </div>
             </form>

@@ -2,9 +2,9 @@
     box-sizing: border-box;
 }
 .main-details{
-    height: 150vh;
+    min-height: 100vh;
+    height: 100vh;
     background-color: rgb(22, 22, 22);
-
 }
 .main-space{
     margin-top: 100px;
