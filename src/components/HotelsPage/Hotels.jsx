@@ -1,26 +1,24 @@
 import React from "react";
 import './Hotels.css'
-import { hotels } from '../../data/hotels';
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { useEffect } from "react";
 import axios from 'axios'
 import { BASE_URL } from '../../api/url'
 
-export function HotelsPage(e) {
+export function HotelsPage() {
 
     const [search, setSearch] = useState('')
     const [order, setOrder] = useState('asc')
     function DataFetching() {
-        const [data, setData] = useState([])
         useEffect(() => {
-            axios.get(`${BASE_URL}/api/hotels/read?name=${search}&order=${order}`)
-                .then((response) => {
-                    let resData = response.data.response
-                    console.log(resData)
-                    setData(resData)
-                })
+            axios.get(`${BASE_URL}/api/hotels/?name=${search}&order=${order}`)
+            .then((response) => {
+                let resData = response.data.response
+                setData(resData)
+            })
         }, [])
+        const [data, setData] = useState([])
         function getRandomImage(arr) {
             const length = arr.length;
             const randomIndex = Math.floor(length * Math.random())
@@ -29,9 +27,9 @@ export function HotelsPage(e) {
         return (
             data.map((e) => {
                 return (
-                    <div key={e.id + 1} className="hotel">
-                        <img className="card-top-img" src={getRandomImage(e.photo)} alt="hotel" />
-                        <h3>{e.name}</h3>
+                    <div className="hotel">
+                        <img key={e.id} className="card-top-img" src={getRandomImage(e.photo)} alt="hotel" />
+                        <h3 key={e.id}>{e.name}</h3>
                         <Link key={e.id} to={`/detailshotels/${e._id}`}>See More</Link>
                     </div>
                 )
