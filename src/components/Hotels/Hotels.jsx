@@ -1,31 +1,41 @@
-import React from "react";
-import './Hotels.css'
+// React
+import { useState, useEffect, React } from 'react';
 import { Link } from "react-router-dom";
-import { useState } from 'react';
-import { useEffect } from "react";
-import axios from 'axios'
-import { BASE_URL } from '../../api/url'
+// Redux
+import { useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
+import hotelAction from "../../redux/actions/hotelAction";
+// Components
+import './Hotels.css'
+
 
 export function HotelsPage() {
-
+    const hotelList = useSelector(store => store.hotelReducer.hotelList)
+    const dispatch = useDispatch()
     const [search, setSearch] = useState('')
     const [order, setOrder] = useState('asc')
+
+    useEffect(() => {
+        dispatch(hotelAction.getHotels())
+        // eslint-disable-next-line
+    }, [])
+    useEffect(()=>{
+        let filter = {
+            name: search,
+            order: order
+        }
+        dispatch(hotelAction.getHotelOrder(filter))
+        // eslint-disable-next-line
+    },[search,order])
+
     function DataFetching() {
-        useEffect(() => {
-            axios.get(`${BASE_URL}/api/hotels/?name=${search}&order=${order}`)
-            .then((response) => {
-                let resData = response.data.response
-                setData(resData)
-            })
-        }, [])
-        const [data, setData] = useState([])
         function getRandomImage(arr) {
             const length = arr.length;
             const randomIndex = Math.floor(length * Math.random())
             return arr[randomIndex]
         }
         return (
-            data.map((e) => {
+            hotelList.map((e) => {
                 return (
                     <div className="hotel">
                         <img key={e.id} className="card-top-img" src={getRandomImage(e.photo)} alt="hotel" />

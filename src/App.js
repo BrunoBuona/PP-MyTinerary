@@ -6,7 +6,7 @@ import {Home} from "./pages/HomePage/Home"
 import {SignUp} from "./pages/signUp/SignUp"
 import {NewHotels} from "./components/NewHotel/NewHotel.jsx"
 import { NewCity } from "./pages/NewCity/NewCity"
-import { HotelsPage } from "./components/HotelsPage/Hotels";
+import { HotelsPage } from "./components/Hotels/Hotels";
 import {DetailsH} from "./components/DetailsHotel/DetailsHotels"
 import {Cities3} from "./pages/Cities/Cities"
 import DetailsC from "./pages/DetailsCities/DitailsCities"
