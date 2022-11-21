@@ -1,7 +1,10 @@
 import React from 'react'
+import { Link as NavLink } from 'react-router-dom'
 
 export default function CallToAction(props) {
-    let {name,Link} = props
+    let {name,rute} = props
   return (
-    <a href={Link}><button type="button">{name}</button></a>
+    <NavLink to={rute}>
+      <button type="button">{name}</button>
+    </NavLink>
 )}

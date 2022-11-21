@@ -1,6 +1,6 @@
 import React from 'react'
 import AutoToTop from '../components/home1/AutoToTop/AutoToTop'
-import { Header } from './Header/Header'
+import { Header } from '../components/Header/Header'
 import { Footer } from './Footer/Footer'
 import './Main.css'
 

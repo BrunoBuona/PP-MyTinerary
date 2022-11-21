@@ -1,20 +1,24 @@
 import './NewHotel.css'
 import React, { useState } from 'react';
-import { hotels } from '../../data/hotels';
+import axios from 'axios';
+import { BASE_URL } from '../../api/url'
 
 function NewHotels() {
     const [name, setName] = useState('');
     const [photo, setPhoto] = useState('');
     const [capacity, setCapacity] = useState('');
-    const [city, setCity] = useState('');
+    const [citiId, setCitiId] = useState('');
+    const [userId, setUserId] = useState('');
 
-    let names = hotels.map(e => e.citiId.toUpperCase());
     const submit = () => {
-        if (name === "" || photo === "" || capacity === "" || city === "") {
+        if (name === "" || photo === "" || capacity === "") {
             alert("Please fill in all fields");
         } else {
-            let newHotel = { name,photo,capacity,city }
-            localStorage.setItem("newHotel", JSON.stringify(newHotel));
+            let newHotel = { name, photo, capacity, citiId, userId };
+            axios.post(`${BASE_URL}/api/hotels/create`, newHotel)
+                .then(res => {
+                    console.log(res);
+                })
         }
     };
     return (
@@ -41,10 +45,18 @@ function NewHotels() {
                         className='form__input'
                         onChange={(e) => setCapacity(Number(e.target.value))}
                     />
-                    <select className='selecthotels' onChange={e => setCity(e.target.value)}>
-                        <option value="0">Select a city</option>
-                        {names.map((e, i) => <option key={i} value={e}>{e}</option>)}
-                    </select>
+                    <input
+                        type="text"
+                        placeholder="City ID"
+                        className='form__input'
+                        onChange={(e) => setCitiId(e.target.value)}
+                        />
+                    <input
+                        type="text"
+                        placeholder="Your User ID"
+                        className='form__input'
+                        onChange={(e) => setUserId(e.target.value)}
+                    />
                     <div className="submit">
                         <button className='submit2' onClick={submit}>Create</button>
                     </div>
