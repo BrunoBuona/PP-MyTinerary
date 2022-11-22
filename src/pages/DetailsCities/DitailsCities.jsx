@@ -33,7 +33,7 @@ console.log(itinerarios);
                                 <img className='img-mh' src={citi.photo} alt={citi.name} />
                             </div>
                             <div className='right-mh'>
-                                <h1>{citi.name} </h1>
+                                <h1>{citi.name}</h1>
                                 <h3>Capacidad: {citi.population} </h3>
                             </div>
                         </div>
@@ -47,9 +47,9 @@ console.log(itinerarios);
                         <div className="main-space">
                             <div className='MainHotel'>
                                 <div className='left-mh'>
-                                    <img class='img-mh' src={e.photo[0]} alt={e.name} />
-                                    <img class='img-mh' src={e.photo[1]} alt={e.name} />
-                                    <img class='img-mh' src={e.photo[2]} alt={e.name} />
+                                    <img className='img-mh' src={e.photo[0]} alt={e.name} />
+                                    <img className='img-mh' src={e.photo[1]} alt={e.name} />
+                                    <img className='img-mh' src={e.photo[2]} alt={e.name} />
                                 </div>
                                 <div className='right-mh'>
                                     <h3>{e.name}</h3>
