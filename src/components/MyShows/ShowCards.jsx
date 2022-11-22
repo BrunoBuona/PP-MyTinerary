@@ -17,7 +17,7 @@ export default function Cards({ name, photo, description, id }) {
         showCancelButton: true,
         confirmButtonColor: '#d33',
         cancelButtonColor: '#ffff9',
-        confirmButtonText: 'Yes, delete it!'
+        confirmButtonText: 'Yes, delete it.'
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire(
