@@ -1,0 +1,29 @@
+.card{
+    border: 1px solid rgb(91, 91, 91);
+    box-shadow: 2px 1px 1px rgb(80, 80, 80);
+    text-align: center;
+    color: white;
+    margin: 20px;
+}
+.card-image{
+    width: 250px;
+    height: 120px;
+    object-fit: cover;
+}
+.card-btns{
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+}
+.card > article{
+    margin: 5px;
+}
+.card > article > h4{
+    padding: 3px;
+}
+.card > article > p{
+    padding: 3px;
+}
+.card-btns{
+    padding: 5px;
+}

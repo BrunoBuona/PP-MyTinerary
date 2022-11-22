@@ -1,6 +1,8 @@
 import hotelReducer from "./hotelReducer"
+import myHotelsReducer from "./myHotelReducer";
 const rootReducer = {
-    hotelReducer
+    hotelReducer,
+    myHotelsReducer
 }
 
 export default rootReducer;
