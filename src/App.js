@@ -10,6 +10,7 @@ import { HotelsPage } from "./components/Hotels/Hotels";
 import {DetailsH} from "./components/DetailsHotel/DetailsHotels"
 import {Cities3} from "./pages/Cities/Cities"
 import DetailsC from "./pages/DetailsCities/DitailsCities"
+import MyHotels from "./pages/myHotels/myHotels";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/detailshotels/:id" element={<DetailsH/>}/>
         <Route path="/cities" element={<Cities3/>}/>
         <Route path="/detailscities/:id" element={<DetailsC/>}/>
+        <Route path="/myhotels" element={<MyHotels/>}/>
       </Routes>
     </Main>
     </>
