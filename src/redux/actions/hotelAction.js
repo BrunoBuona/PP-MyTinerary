@@ -18,9 +18,14 @@ let getHotelName = createAsyncThunk('getHotelName', async(name)=>{
     }
 })
 let getHotelOrder = createAsyncThunk('getHotelByFilter',async(filter)=>{
+    try{
     const respuesta = await axios.get(`${BASE_URL}/api/hotels/?name=${filter.name}&order=${filter.order}`)
     return{
         hotelList: respuesta.data.response
+    }}catch(error){
+       return{
+        hotelList: error.response.data.response
+       }
     }
 })
 
