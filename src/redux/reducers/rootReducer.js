@@ -3,13 +3,15 @@ import cityReducer from "./cityReducer"
 import CityFilterReducer from "./cityFilterReducer"
 import myHotelsReducer from "./myHotelReducer"
 import myShowReducer from "./myHotelReducer"
+import myCityReducer from "./myCityReducer"
 
 const rootReducer = {
     hotelReducer,
     myHotelsReducer,
     myShowReducer,
     cityReducer,
-    CityFilterReducer
+    CityFilterReducer,
+    myCityReducer
 }
 
 export default rootReducer;
