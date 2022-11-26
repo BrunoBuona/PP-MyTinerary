@@ -6,7 +6,6 @@ const initialState = {
 
 const loginReducer = createReducer(initialState, (login) => {
     login.addCase(loginAction.getToken.fulfilled, function (state, action) {
-        console.log(action.payload)
             return {token: action.payload}
         }) })
 

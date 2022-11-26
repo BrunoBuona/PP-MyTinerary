@@ -21,11 +21,33 @@ function LoginForm() {
       password: pwd.current.value,
     };
     let res = await axios.post(`${BASE_URL}/api/auth/signin`, dataLogin);
-    let tokenx = res.data.response.token
     try {
       if (res.data.success) {
+      let tokenx = res.data.response.token
       dispatch(loginAction.getToken(tokenx))
-      localStorage.setItem("token", tokenx);
+      localStorage.setItem("token", tokenx)
+      let timerInterval
+      Swal.fire({
+        title: 'Successfully Login',
+        html: "We're redirecting you to Home Page...",
+        timer: 2200,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading()
+          const b = Swal.getHtmlContainer().querySelector('b')
+          timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft()
+          }, 100)
+        },
+        willClose: () => {
+          window.location.href = `/`
+        }
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log('I was closed by the timer')
+        }
+        });
     } else {
       Swal.fire({
         icon: "error",
