@@ -5,6 +5,7 @@ import myHotelsReducer from "./myHotelReducer"
 import myShowReducer from "./myHotelReducer"
 import myCityReducer from "./myCityReducer"
 import myItineraryReducer from "./myItineraryReducer"
+import loginReducer from "./loginReducer"
 
 const rootReducer = {
     hotelReducer,
@@ -13,7 +14,8 @@ const rootReducer = {
     cityReducer,
     CityFilterReducer,
     myCityReducer,
-    myItineraryReducer
+    myItineraryReducer,
+    loginReducer,
 }
 
 export default rootReducer;
