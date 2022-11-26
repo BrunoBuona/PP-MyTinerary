@@ -1,55 +1,61 @@
 import "./SignUpForm.css"
-import React, { useState, useEffect} from "react";
+import React, { useRef } from "react";
+import Swal from 'sweetalert2';
+import axios from 'axios'
+import { BASE_URL } from '../../api/url'
 
 
 function SignUpForm() {
+    const nameRef = useRef()
+    const lastNameRef = useRef()
+    const photoRef = useRef()
+    const ageRef = useRef()
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const formRef = useRef()
 
-    const getRecord = () => {
-        let data = localStorage.getItem("registration");
-        if(data){
-            return JSON.parse(data);
-        }else{ 
-            return [];
+    async function saveData(e) {
+        e.preventDefault()
+        let userValue = {
+            name: nameRef.current.value,
+            lastName: lastNameRef.current.value,
+            role: "user",
+            photo: photoRef.current.value,
+            age: ageRef.current.value,
+            email: emailRef.current.value,
+            password: passwordRef.current.value,
+        }
+
+        try {
+            let res = await axios.post(`${BASE_URL}/api/auth/singup`, userValue)
+            console.log(res);
+            if (res.data.success) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'The user has been created successfully!',
+                    text: `Activate your account login in your email.`,
+                })
+                formRef.current.reset()
+            }
+            else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'We found an error...',
+                    text: `Errors: ${res.data.message.join(', ')}`,
+                })
+            }
+        } catch (err) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Error, the user email, it´s already exist',
+                text: err.message,
+            })
         }
     }
 
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        let myObject = { name,surName,country,mobileNumber,email,password }
-        setRegistration([...registration, myObject]);
-        limpiarFormulario();
-
-    };
-    
-    const limpiarFormulario = () => {
-        setName("");
-        setSurName("");
-        setCountry("");
-        setMobileNumber("");
-        setEmail("");
-        setPassword("");
-        
-        document.getElementById("miFormulario").reset();
-    }
-
-    const [registration, setRegistration] = useState (getRecord());
-
-    const [name, setName] = useState("");
-    const [surName, setSurName] = useState("");
-    const [country, setCountry] = useState("");
-    const [mobileNumber, setMobileNumber] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-/*     const [error, setError] = useState(""); */
-
-    useEffect(() =>{
-        localStorage.setItem("registro", JSON.stringify(registration));
-},[registration]);
-
     return (
         <>
-            <form onSubmit={handleSubmit} className="formSing" id="miFormulario">
+            <form ref={formRef} className="formSing" id="miFormulario">
                 <div className="form-bodySing">
                     <h2 className="title2Sing">Sign Up</h2>
                     <input
@@ -58,55 +64,52 @@ function SignUpForm() {
                         type="text"
                         placeholder="Name"
                         className="form__input"
-                        onChange={(e) => setName(e.target.value)}
+                        ref={nameRef}
                         required
                     />
                     <input
-                        id="surName"
-                        name="SurName"
+                        id="lastName"
+                        name="lastName"
                         type="text"
-                        placeholder="Surname"
+                        placeholder="Last Name"
                         className="form__input"
-                        onChange={(e) => setSurName(e.target.value)}
-                        required 
+                        ref={lastNameRef}
+                        required
                     />
                     <input
-                        id="Country"
-                        type="text"
-                        placeholder="Country"
                         className="form__input"
-                        onChange={(e) => setCountry(e.target.value)}
-                        required 
+                        type='text'
+                        id='photoInput'
+                        placeholder="Photo"
+                        ref={photoRef}
+                        required
                     />
                     <input
-                        id="Phone"
-                        type="tel"
-                        placeholder="Phone"
                         className="form__input"
-                        onChange={(e) => setMobileNumber(e.target.value)}
-                        required="mdaosi"
+                        type='number'
+                        id='age'
+                        placeholder="Age"
+                        ref={ageRef}
+                        required
                     />
                     <input
                         id="Email"
                         type="email"
                         placeholder="Email"
                         className="form__input"
-                        onChange={(e) => setEmail(e.target.value)}
-                        required 
+                        ref={emailRef}
+                        required
                     />
                     <input
                         id="Password"
                         type="password"
                         placeholder="Password"
                         className="form__input"
-                        onChange={(e) => setPassword(e.target.value)}
-                        required 
+                        ref={passwordRef}
+                        required
                     />
                     <div className="submitSing">
-                        <button className="submit2Sing">
-                            Register
-                        </button>
-
+                        <input onClick={saveData} className="submit2Sing" type='button' value='Register' />
                     </div>
                 </div>
             </form>
