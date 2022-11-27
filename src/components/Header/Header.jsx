@@ -10,11 +10,11 @@ function Header() {
             <div className="ancors">
                 <div className="bottonHome">
                     <p className="parraf">Pages</p>
-                    <NavBar2  name3="Hotels" name4="Home" name5="Cities" name6="New City" name7="New Hotel" name8="My shows" name9="My itineraries"/>
+                    <NavBar2  name3="Hotels" name4="Home" name5="Cities" name6="New City" name7="New Hotel" name8="My shows" name9="My itineraries" />
                 </div>
                 <div className="bottonHome">
-                    <p className="parraf">Register</p>
-                    <NavBar name1="Sign In" name2="Sign Up"/>
+                    <p className="parraf">Account</p>
+                    <NavBar name1="Sign In" name2="Sign Up" name3="My cities" name4="My hotels"/>
                 </div>
             </div>
         </header>

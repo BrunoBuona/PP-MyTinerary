@@ -14,7 +14,6 @@ function LoginForm() {
   const pwd = useRef();
   const navigate = useNavigate();
   let store = useSelector((state) => state.loginReducer);
-  console.log(store)
   const dispatch = useDispatch()
   async function submit(e) {
     e.preventDefault();
@@ -28,7 +27,6 @@ function LoginForm() {
       let tokenx = res.data.response.token
       dispatch(loginAction.getToken(tokenx))
       localStorage.setItem("token", tokenx)
-      let timerInterval;
       Swal.fire({
         title: 'Successfully Login',
         html: "We're redirecting you to Home Page...",
