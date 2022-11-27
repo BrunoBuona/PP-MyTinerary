@@ -14,8 +14,16 @@ import MyHotels from "./pages/myHotels/myHotels";
 import MyCity from "./pages/myCity/MyCity";
 import MyShows from "./pages/myShows/myShows";
 import MyItineraries from "./pages/myItineraries/myItineraries";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import { useSelector } from "react-redux";
+
+
 
 function App() {
+  let user = useSelector((store) => store.loginReducer)
+  let logged = user.token
+
+
   return (
     <>
     <Main>
@@ -32,8 +40,10 @@ function App() {
         <Route path="/detailscities/:id" element={<DetailsC/>}/>
         <Route path="/myhotels" element={<MyHotels/>}/>
         <Route path="/myCities" element={<MyCity/>}/>
-        <Route path="/myshows" element={<MyShows/>}/>
-        <Route path="/myitineraries" element={<MyItineraries/>}/>
+        <Route element={<ProtectedRoute isAllowed={!!logged} reDirect='/SignIn'/>}>
+          <Route path="/myshows" element={<MyShows/>}/>
+          <Route path="/myitineraries" element={<MyItineraries/>}/>
+        </Route>
       </Routes>
     </Main>
     </>
