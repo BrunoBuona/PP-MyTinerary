@@ -22,6 +22,9 @@ import { useSelector } from "react-redux";
 function App() {
   let user = useSelector((store) => store.loginReducer)
   let logged = user.token
+  let role = user.token
+  let admin = role.role === "admin"
+  console.log(admin)
 
 
   return (
@@ -38,8 +41,10 @@ function App() {
         <Route path="/detailshotels/:id" element={<DetailsH/>}/>
         <Route path="/cities" element={<Cities3/>}/>
         <Route path="/detailscities/:id" element={<DetailsC/>}/>
-        <Route path="/myhotels" element={<MyHotels/>}/>
-        <Route path="/myCities" element={<MyCity/>}/>
+        <Route element={<ProtectedRoute isAllowed={!!admin} reDirect='/'/>}>
+          <Route path="/myhotels" element={<MyHotels/>}/>
+          <Route path="/myCities" element={<MyCity/>}/>
+        </Route>
         <Route element={<ProtectedRoute isAllowed={!!logged} reDirect='/SignIn'/>}>
           <Route path="/myshows" element={<MyShows/>}/>
           <Route path="/myitineraries" element={<MyItineraries/>}/>
