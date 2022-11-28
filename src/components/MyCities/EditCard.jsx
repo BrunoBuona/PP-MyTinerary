@@ -3,6 +3,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import "../MyHotels/EditCard.css";
+import {BASE_URL} from "../../api/url";
 
 export function EditCard({ id }) {
   const [name, setName] = useState("");
@@ -16,7 +17,7 @@ export function EditCard({ id }) {
       photo: photo,
     };
 
-    axios.put(`http://localhost:8000/api/cities/${id}`, editCity, {
+    axios.put(`${BASE_URL}/api/cities/${id}`, editCity, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
