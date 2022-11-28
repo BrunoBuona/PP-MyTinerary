@@ -17,7 +17,11 @@ export function EditCardItinerary({ id }) {
       photo: photo,
     };
 
-    axios.put(`${BASE_URL}/api/itineraries/${id}`, editItinerary).then((res) => {
+    axios.put(`${BASE_URL}/api/itineraries/${id}`, editItinerary,{
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }).then((res) => {
       if (res.data.success) {
         Swal.fire({
           title: "Success",

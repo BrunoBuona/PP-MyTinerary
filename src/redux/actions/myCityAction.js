@@ -2,9 +2,12 @@ import {  createAsyncThunk} from "@reduxjs/toolkit";
 import axios from "axios";
 
 const deleteCities = createAsyncThunk("deleteCities", async (id) => {
-    let url = `http://localhost:8000/api/cities/${id}`;
     try {
-      await axios.delete(url);
+      await axios.delete(`http://localhost:8000/api/cities/${id}`,{
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
       return {
         success: true,
       };
