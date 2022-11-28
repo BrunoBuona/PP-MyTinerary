@@ -18,7 +18,11 @@ export function EditCard({ id }) {
       photo: photo,
     };
 
-    axios.patch(`${BASE_URL}/api/shows/${id}`, editShow).then((res) => {
+    axios.patch(`${BASE_URL}/api/shows/${id}`, editShow, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }).then((res) => {
       if (res.data.success) {
         Swal.fire({
           title: "Success",
