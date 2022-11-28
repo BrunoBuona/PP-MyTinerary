@@ -27,3 +27,8 @@
 .card-btns{
     padding: 5px;
 }
+.createshow-image{
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+}

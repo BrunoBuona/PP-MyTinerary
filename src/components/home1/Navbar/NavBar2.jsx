@@ -54,11 +54,6 @@ return(
                         <a className="ancorLink"  href="-">{name9}</a>
                     </li>
                 </NavLink>
-                <NavLink to="/newshow">
-                    <li className="i">
-                        <a className="ancorLink"  href="-">{name10}</a>
-                    </li>
-                </NavLink>
                 </ul>
             </>
         ) : (

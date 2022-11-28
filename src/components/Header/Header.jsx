@@ -10,7 +10,7 @@ function Header() {
             <div className="ancors">
                 <div className="bottonHome">
                     <p className="parraf">Pages</p>
-                    <NavBar2  name3="Hotels" name4="Home" name5="Cities" name6="New City" name7="New Hotel" name8="My shows" name9="My itineraries" name10="New Show" />
+                    <NavBar2  name3="Hotels" name4="Home" name5="Cities" name6="New City" name7="New Hotel" name8="My shows" name9="My itineraries" />
                 </div>
                 <div className="bottonHome">
                     <p className="parraf">Account</p>
