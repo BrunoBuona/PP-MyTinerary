@@ -68,7 +68,7 @@ export default function NewShows() {
     return (
 
         <form ref={formRef} className="form-hotel3" onSubmit={submit}>
-            <div className="form-body2">
+            <div className="form-body3">
                 <h1 className='title'>New Show</h1>
                 <h2 className='title2'>¡Create Show Card!</h2>
                 <input
@@ -97,7 +97,7 @@ export default function NewShows() {
                 />
                 <input
                     type="date"
-                    className='form__input_show'
+                    className='form__input_show_date'
                     ref={date}
                 />
                 <select

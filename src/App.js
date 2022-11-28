@@ -43,12 +43,12 @@ function App() {
         <Route path="/detailshotels/:id" element={<DetailsH/>}/>
         <Route path="/cities" element={<Cities3/>}/>
         <Route path="/detailscities/:id" element={<DetailsC/>}/>
-        <Route path="/newshow" element={<NewShows/>} />
         <Route element={<ProtectedRoute isAllowed={!!admin} reDirect='/'/>}>
           <Route path="/myhotels" element={<MyHotels/>}/>
           <Route path="/myCities" element={<MyCity/>}/>
           <Route path="/NewHotel" element={<NewHotels/>} />
           <Route path="/NewCity" element={<NewCity/>} />
+          <Route path="/myshows/newshow" element={<NewShows/>} />
         </Route>
         <Route element={<ProtectedRoute isAllowed={!!logged} reDirect='/SignIn'/>}>
           <Route path="/myshows" element={<MyShows/>}/>
