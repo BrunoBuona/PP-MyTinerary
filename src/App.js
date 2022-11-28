@@ -19,6 +19,7 @@ import { useSelector } from "react-redux";
 import ViewProfile1 from "./components/Profile/ViewProfile1.jsx";
 import ViewProfile2 from "./components/Profile/ViewProfile2.jsx";
 import NewShows from "./components/NewShow/NewShow";
+import NewItineraries from "./pages/NewItineraries/NewItineraries"
 
 
 
@@ -49,6 +50,7 @@ function App() {
           <Route path="/NewHotel" element={<NewHotels/>} />
           <Route path="/NewCity" element={<NewCity/>} />
           <Route path="/myshows/newshow" element={<NewShows/>} />
+          <Route path="/myitineraries/newitineraries" element={<NewItineraries/>} />
         </Route>
         <Route element={<ProtectedRoute isAllowed={!!logged} reDirect='/SignIn'/>}>
           <Route path="/myshows" element={<MyShows/>}/>
