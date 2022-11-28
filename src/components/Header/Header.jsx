@@ -14,7 +14,7 @@ function Header() {
                 </div>
                 <div className="bottonHome">
                     <p className="parraf">Account</p>
-                    <NavBar name1="Sign In" name2="Sign Up" name3="My cities" name4="My hotels"/>
+                    <NavBar name1="Sign In" name2="Sign Up" name3="My cities" name4="My hotels" name5="Profile"/>
                 </div>
             </div>
         </header>

@@ -4,7 +4,7 @@ import "./NavBar.css";
 import { Link as NavLink } from "react-router-dom";
 
 function NavBar(props) {
-    let { name1, name2, name3, name4} = props;
+    let { name1, name2, name3, name4, name5} = props;
     let [mostrarOcultar, setMostrarOcultar] = useState(false);
 
     //funcion para mostrar el menu
@@ -37,6 +37,11 @@ function NavBar(props) {
                     <NavLink to="/myhotels">
                         <li className="d">
                             <a className="ancorLink"  href="-">{name4}</a>
+                        </li>
+                    </NavLink>
+                    <NavLink to="/profile">
+                        <li className="e">
+                            <a className="ancorLink"  href="-">{name5}</a>
                         </li>
                     </NavLink>
                         

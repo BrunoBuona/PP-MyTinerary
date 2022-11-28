@@ -16,6 +16,10 @@ import MyShows from "./pages/myShows/myShows";
 import MyItineraries from "./pages/myItineraries/myItineraries";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { useSelector } from "react-redux";
+import ViewProfile1 from "./components/Profile/ViewProfile1.jsx";
+import ViewProfile2 from "./components/Profile/ViewProfile2.jsx";
+
+
 
 
 
@@ -36,18 +40,20 @@ function App() {
         <Route path="/SignIn" element={<LoginForm/>}/>
         <Route path="*" element={<NotFound/>} />
         <Route path="/SignUp" element={<SignUp/>} />
-        <Route path="/NewHotel" element={<NewHotels/>} />
-        <Route path="/NewCity" element={<NewCity/>} />
         <Route path="/detailshotels/:id" element={<DetailsH/>}/>
         <Route path="/cities" element={<Cities3/>}/>
         <Route path="/detailscities/:id" element={<DetailsC/>}/>
         <Route element={<ProtectedRoute isAllowed={!!admin} reDirect='/'/>}>
           <Route path="/myhotels" element={<MyHotels/>}/>
           <Route path="/myCities" element={<MyCity/>}/>
+          <Route path="/NewHotel" element={<NewHotels/>} />
+          <Route path="/NewCity" element={<NewCity/>} />
         </Route>
         <Route element={<ProtectedRoute isAllowed={!!logged} reDirect='/SignIn'/>}>
           <Route path="/myshows" element={<MyShows/>}/>
           <Route path="/myitineraries" element={<MyItineraries/>}/>
+          <Route path="/profile" element={<ViewProfile1/>}/>
+          <Route path="/profile/edit" element={<ViewProfile2/>}/>
         </Route>
       </Routes>
     </Main>
