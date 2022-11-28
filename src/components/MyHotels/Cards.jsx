@@ -4,10 +4,11 @@ import "./Cards.css";
 import { useDispatch } from "react-redux";
 import myHotelAction from "../../redux/actions/myHotelAction";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export default function Cards({ name, photo, description, id }) {
     let [push, setPush] = useState(false);
-    
+    const navigate = useNavigate();
     const dispatch = useDispatch()
     function deleteIt(e) {
     Swal.fire({
@@ -24,6 +25,7 @@ export default function Cards({ name, photo, description, id }) {
               'Deleted!',
               dispatch(myHotelAction.deleteHotels(e)),
             'Your file has been deleted.',
+            navigate("/myhotels")
           )
         }
       })

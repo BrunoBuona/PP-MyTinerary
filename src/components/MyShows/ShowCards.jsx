@@ -4,10 +4,12 @@ import "./Shows.css";
 import { useDispatch, useSelector } from "react-redux";
 import myShowAction from "../../redux/actions/myShowAction";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export default function Cards({ name, photo, description, id }) {
     let [push, setPush] = useState(false);
     const dispatch = useDispatch()
+    let navigate = useNavigate()
     function deleteIt(e) {
     Swal.fire({
         title: 'Are you sure?',
@@ -23,7 +25,8 @@ export default function Cards({ name, photo, description, id }) {
               'Deleted!',
               dispatch(myShowAction.deleteShows(e)),
             'Your file has been deleted.',
-          )
+            )
+            navigate("/myshows")
         }
       })
 }

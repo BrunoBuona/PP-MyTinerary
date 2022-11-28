@@ -4,22 +4,36 @@ import axios from 'axios';
 import { BASE_URL } from '../../api/url'
 import { useRef } from 'react';
 import Swal from 'sweetalert2'
+import { useNavigate } from "react-router-dom";
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 function NewHotels() {
+    let token = useSelector((store) => store.loginReducer.token)
     const nameRef = useRef()
     const capacityRef = useRef()
     const photoRef = useRef()
-    const userIdRef = useRef()
-    const citiIdRef = useRef()
-
+    const userId = useRef(token.id)
+    const citiId = useRef()
+    const navigate = useNavigate();
+    const [cityList, setCityList] = useState([])
+    useEffect(() => {
+        return async function fetchdata() {
+               await axios.get(`${BASE_URL}/api/mycities/`).then(res => {
+                let data = res.data.response
+                setCityList(data)
+            })
+        }
+    }, [])
     async function submit(e){
         e.preventDefault();
         const dataHotel ={
             name: nameRef.current.value,
             capacity: capacityRef.current.value,
             photo: photoRef.current.value,
-            userId: userIdRef.current.value,
-            citiId: citiIdRef.current.value
+            userId: userId.current,
+            citiId: citiId.current.value
         }
         try{
             let res = await axios.post(`${BASE_URL}/api/hotels`, dataHotel)
@@ -41,7 +55,7 @@ function NewHotels() {
                   },
                   willClose: () => {
                     clearInterval(timerInterval)
-                    hotelCreated.filter(e => e.name === dataHotel.name).map(e => window.location.href = `/detailshotels/${e._id}`)
+                    hotelCreated.filter(e => e.name === dataHotel.name).map(e => navigate(`/detailshotels/${e._id}`))
                   }
                 }).then((result) => {
                   /* Read more about handling dismissals below */
@@ -103,18 +117,17 @@ function NewHotels() {
                         className='form__input'
                         ref={capacityRef}
                     />
-                    <input
-                        type="text"
-                        placeholder="City ID"
-                        className='form__input'
-                        ref={citiIdRef}
-                        />
-                    <input
-                        type="text"
-                        placeholder="Your User ID"
-                        className='form__input'
-                        ref={userIdRef}
-                    />
+                    <select
+                    type="text"
+                    placeholder="Hotel ID"
+                    className='form__input_show'
+                    ref={citiId}
+                ><option value="">Choose an Hotel</option>
+                {cityList.map((hotel) => {
+                    return (
+                        <option value={hotel._id}>{hotel.name}</option>
+                    )
+                })} </select>
                     <div className="submit">
                         <button className='submit2'>Create</button>
                     </div>

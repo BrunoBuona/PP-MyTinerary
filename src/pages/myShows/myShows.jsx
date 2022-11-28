@@ -14,7 +14,7 @@ export default function MyShows() {
       .get(`${BASE_URL}/api/myshows?userId=${token.id}`)
       .then((res) => setShow(res.data.response))
       .catch((err) => err.message);
-  }, []);
+  });
 
   return (
     <div className="main-container">
