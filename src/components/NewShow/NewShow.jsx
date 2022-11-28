@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import { BASE_URL } from '../../api/url';
 import { useState } from 'react';
 import { useEffect } from 'react';
+
 export default function NewShows() {
 
     let token = useSelector((store) => store.loginReducer.token)

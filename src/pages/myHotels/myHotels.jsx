@@ -4,6 +4,7 @@ import { BASE_URL } from "../../api/url";
 import Cards from "../../components/MyHotels/Cards";
 import './myHotel.css'
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 export default function MyHotels() {
   let [hotel, setHotel] = useState([]);
@@ -14,11 +15,18 @@ export default function MyHotels() {
       .get(`${BASE_URL}/api/myhotels?userId=${token.id}`)
       .then((res) => setHotel(res.data.response))
       .catch((err) => err.message);
-  }, []);
+  },);
 
   return (
     <div className="main-container">
+           <div className="myshows-header">
+        <div className="title-header">
         <h1 className="title">My Hotels</h1>
+        </div>
+        <div className="btn-createshow">
+      <NavLink to={"../newhotel"}><img className="createshow-image" src="https://cdn-icons-png.flaticon.com/512/7604/7604035.png" alt="create show"/></NavLink>
+      </div>
+      </div>
         <div className="hotelsList">
       {hotel.length > 0 ? (
         hotel.map(iteracion => (
