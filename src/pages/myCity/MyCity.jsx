@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Carduser from "../../components/MyCities/CardUser";
+import { useSelector } from "react-redux";
 
 
 export default function MyHotels() {
     let [city, setCity] = useState([]);
+    let token = useSelector((store) => store.loginReducer.token)
     useEffect(() => {
         console.log(city);
         axios
-            .get(`http://localhost:8000/api/mycities?userId=636e884578fa70e8f8c471f7`)
+            .get(`http://localhost:8000/api/mycities?userId=${token.id}`)
             .then((res) => setCity(res.data.response))
             .catch((err) => err.message);
     }, []);
