@@ -34,6 +34,10 @@
     position: absolute;
     top: 400px; 
 }
+.i{
+    position: absolute;
+    top: 450px; 
+}
 
 .ul{
         list-style: none;

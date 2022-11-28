@@ -1,0 +1,27 @@
+
+ .form-hotel3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 95vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter:contrast(100%);
+    background-image: url("https://media.wired.com/photos/59323b86b8eb31692072e40d/master/pass/Pool-Wired-Ryan.jpg");
+}
+.form__input_show{
+    padding: 3px;
+    width: 80%;
+    background-color: white;
+    color:black;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 3px 3px 5px rgba(3, 3, 3, 0.654);
+    text-align: center;
+}

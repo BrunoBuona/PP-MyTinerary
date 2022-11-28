@@ -5,7 +5,7 @@ import { Link as NavLink } from "react-router-dom";
 
 function NavBar2(props) {
 
-    let { name3, name4,name5,name6,name7,name8,name9 } = props;
+    let { name3, name4,name5,name6,name7,name8,name9, name10 } = props;
     let [mostraryOcultar, setMostraryOcultar] = useState(false);
 
     let hidee = () =>{
@@ -52,6 +52,11 @@ return(
                 <NavLink to="/myitineraries">
                     <li className="h">
                         <a className="ancorLink"  href="-">{name9}</a>
+                    </li>
+                </NavLink>
+                <NavLink to="/newshow">
+                    <li className="i">
+                        <a className="ancorLink"  href="-">{name10}</a>
                     </li>
                 </NavLink>
                 </ul>

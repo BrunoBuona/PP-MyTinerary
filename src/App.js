@@ -18,7 +18,7 @@ import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { useSelector } from "react-redux";
 import ViewProfile1 from "./components/Profile/ViewProfile1.jsx";
 import ViewProfile2 from "./components/Profile/ViewProfile2.jsx";
-
+import NewShows from "./components/NewShow/NewShow";
 
 
 
@@ -43,6 +43,7 @@ function App() {
         <Route path="/detailshotels/:id" element={<DetailsH/>}/>
         <Route path="/cities" element={<Cities3/>}/>
         <Route path="/detailscities/:id" element={<DetailsC/>}/>
+        <Route path="/newshow" element={<NewShows/>} />
         <Route element={<ProtectedRoute isAllowed={!!admin} reDirect='/'/>}>
           <Route path="/myhotels" element={<MyHotels/>}/>
           <Route path="/myCities" element={<MyCity/>}/>
