@@ -72,7 +72,7 @@ export default function EditProfile() {
         <>
             <div className="header-columns-edit">
                 <div className="col-2-header2">
-                    <h1>Your Profile</h1>
+                    <h1>Edit Profile</h1>
                 </div>
                 <div className="col-3-header">
                     <button

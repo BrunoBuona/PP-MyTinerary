@@ -31,6 +31,9 @@
   flex-direction: column;
   gap: 1rem;
 }
+.profile-name{
+  text-align: center;
+}
 .profile-pic {
   width: 125px;
   height: 125px;
@@ -106,4 +109,38 @@ label{
     color: rgb(255, 115, 115);
     font-weight: bold;
     text-transform: uppercase;
+}
+
+
+@media screen and (max-width: 750px){
+  .profile-card{
+     flex-direction: column;
+      height: auto;
+      width: 100%;
+      padding: 0;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+  }
+  .userData-cols{
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+ .col-1-pc{
+  width: 100%;
+  height: auto;
+  border: none;
+  margin: 0;
+  box-shadow: none;
+  flex-wrap: wrap;
+ }
+ .col-2-pc{
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  flex-wrap: wrap;
+ }
 }
