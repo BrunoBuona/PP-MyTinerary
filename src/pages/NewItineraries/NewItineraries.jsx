@@ -23,6 +23,7 @@ export default function NewItineraries() {
         return async function fetchdata() {
                await axios.get(`${BASE_URL}/api/cities/`).then(res => {
                 let data = res.data.response
+                console.log(data)
                 setCityList(data)
             })
         }

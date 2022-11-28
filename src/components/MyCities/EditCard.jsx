@@ -16,7 +16,11 @@ export function EditCard({ id }) {
       photo: photo,
     };
 
-    axios.put(`http://localhost:8000/api/cities/${id}`, editCity).then((res) => {
+    axios.put(`http://localhost:8000/api/cities/${id}`, editCity, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }).then((res) => {
       if (res.data.success) {
         Swal.fire({
           title: "Success",
