@@ -32,26 +32,6 @@ return(
                         <a className="ancorLink"  href="-">{name5}</a>
                     </li>
                 </NavLink>
-{/*                 <NavLink to="/NewCity">
-                    <li className="d">
-                        <a className="ancorLink"  href="-">{name6}</a>
-                    </li>
-                </NavLink>
-                <NavLink to="/NewHotel">
-                    <li className="f">
-                        <a className="ancorLink"  href="-">{name7}</a>
-                    </li>
-                </NavLink>
-                <NavLink to="/myshows">
-                    <li className="g">
-                        <a className="ancorLink"  href="-">{name8}</a>
-                    </li>
-                </NavLink>
-                <NavLink to="/myitineraries">
-                    <li className="h">
-                        <a className="ancorLink"  href="-">{name9}</a>
-                    </li>
-                </NavLink> */}
                 </ul>
             </>
         ) : (
