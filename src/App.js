@@ -49,14 +49,14 @@ function App() {
           <Route path="/myCities" element={<MyCity/>}/>
           <Route path="/NewHotel" element={<NewHotels/>} />
           <Route path="/NewCity" element={<NewCity/>} />
-          <Route path="/myshows/newshow" element={<NewShows/>} />
-          <Route path="/myitineraries/newitineraries" element={<NewItineraries/>} />
         </Route>
         <Route element={<ProtectedRoute isAllowed={!!logged} reDirect='/SignIn'/>}>
           <Route path="/myshows" element={<MyShows/>}/>
           <Route path="/myitineraries" element={<MyItineraries/>}/>
           <Route path="/profile" element={<ViewProfile1/>}/>
-          <Route path="/profile/edit" element={<ViewProfile2/>}/>
+          <Route path="/profile/edit" element={<ViewProfile2/>}/>          
+          <Route path="/myshows/newshow" element={<NewShows/>} />
+          <Route path="/myitineraries/newitineraries" element={<NewItineraries/>} />
         </Route>
       </Routes>
     </Main>

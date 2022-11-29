@@ -29,7 +29,7 @@ function NavBar(props) {
                             <a className="ancorLink"  href="-">{name2}</a>
                         </li>
                     </NavLink>
-                    <NavLink to="/myCities">
+{/*                     <NavLink to="/myCities">
                         <li className="c">
                             <a className="ancorLink"  href="-">{name3}</a>
                         </li>
@@ -43,7 +43,7 @@ function NavBar(props) {
                         <li className="e">
                             <a className="ancorLink"  href="-">{name5}</a>
                         </li>
-                    </NavLink>
+                    </NavLink> */}
                         
                     </ul>
                 </>
