@@ -11,7 +11,6 @@ function NavBar(props) {
     let hide = () => {
         setMostrarOcultar(!mostrarOcultar);
     };
-
     
     return (
         <div>
@@ -29,7 +28,7 @@ function NavBar(props) {
                             <a className="ancorLink"  href="-">{name2}</a>
                         </li>
                     </NavLink>
-                        
+
                     </ul>
                 </>
             ) : (

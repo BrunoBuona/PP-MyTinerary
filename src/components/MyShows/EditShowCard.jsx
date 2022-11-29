@@ -3,13 +3,14 @@ import { BASE_URL } from "../../api/url";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import "./EditShowCard.css";
 
 export function EditCard({ id }) {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [photo, setPhoto] = useState("");
+  const navigate = useNavigate();
   let submit = (e) => {
     e.preventDefault();
     let editShow = {
@@ -18,13 +19,20 @@ export function EditCard({ id }) {
       photo: photo,
     };
 
-    axios.patch(`${BASE_URL}/api/shows/${id}`, editShow).then((res) => {
+    axios.patch(`${BASE_URL}/api/shows/${id}`, editShow, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    }).then((res) => {
       if (res.data.success) {
         Swal.fire({
           title: "Success",
           text: "The Show was updated succesfully",
           icon: "success",
-        });
+          
+        }
+        )
+        navigate('/myshows/')
       }
     });
   };

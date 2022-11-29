@@ -1,0 +1,61 @@
+
+ .form-hotel3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 95vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter:contrast(100%);
+    background-image: url("https://media.wired.com/photos/59323b86b8eb31692072e40d/master/pass/Pool-Wired-Ryan.jpg");
+}
+.form-body3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    justify-content: center;
+    width: 30%;
+    height: auto;
+    background-color: #d7e3ff55;
+    box-shadow: 3px 3px 11px rgba(3, 3, 3, 0.771);
+  }
+.form__input_show{
+    padding: 3px;
+    width: 80%;
+    background-color: white;
+    color:black;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 3px 3px 5px rgba(3, 3, 3, 0.654);
+    text-align: center;
+}
+.form__input_show_date{
+    padding: 3px;
+    width: 80%;
+    height: 2rem;
+    background-color: white;
+    color:black;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 3px 3px 5px rgba(3, 3, 3, 0.654);
+    text-align: center;
+}
+@media screen and (max-width: 900px) {
+    .form-body3{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 500px) {
+    .form-body3{
+        width: 100%;
+    }
+}

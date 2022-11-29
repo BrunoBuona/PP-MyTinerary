@@ -1,0 +1,29 @@
+.cont-main-profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cont-title{
+    height: 8vh;
+    display: flex;
+}
+.name-profiel{
+    font-size: 1rem;
+    text-align: center;
+    margin: .8rem;
+    display: flex;
+    text-align: center; 
+    align-items: center;
+}
+.cont-img-profile{
+    height: 100%;
+    width: 100%;
+}
+.img-profiel{
+    height: 100%;
+    border-radius: 1rem;
+}
+.name-profiel{
+    color: white;
+}

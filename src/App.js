@@ -14,8 +14,24 @@ import MyHotels from "./pages/myHotels/myHotels";
 import MyCity from "./pages/myCity/MyCity";
 import MyShows from "./pages/myShows/myShows";
 import MyItineraries from "./pages/myItineraries/myItineraries";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import { useSelector } from "react-redux";
+import ViewProfile1 from "./components/Profile/ViewProfile1.jsx";
+import ViewProfile2 from "./components/Profile/ViewProfile2.jsx";
+import NewShows from "./components/NewShow/NewShow";
+import NewItineraries from "./pages/NewItineraries/NewItineraries"
+
+
+
 
 function App() {
+  let user = useSelector((store) => store.loginReducer)
+  let logged = user.token
+  let role = user.token
+  let admin = role.role === "admin"
+  console.log(admin)
+
+
   return (
     <>
     <Main>
@@ -25,15 +41,23 @@ function App() {
         <Route path="/SignIn" element={<LoginForm/>}/>
         <Route path="*" element={<NotFound/>} />
         <Route path="/SignUp" element={<SignUp/>} />
-        <Route path="/NewHotel" element={<NewHotels/>} />
-        <Route path="/NewCity" element={<NewCity/>} />
         <Route path="/detailshotels/:id" element={<DetailsH/>}/>
         <Route path="/cities" element={<Cities3/>}/>
         <Route path="/detailscities/:id" element={<DetailsC/>}/>
-        <Route path="/myhotels" element={<MyHotels/>}/>
-        <Route path="/myCities" element={<MyCity/>}/>
-        <Route path="/myshows" element={<MyShows/>}/>
-        <Route path="/myitineraries" element={<MyItineraries/>}/>
+        <Route element={<ProtectedRoute isAllowed={!!admin} reDirect='/'/>}>
+          <Route path="/myhotels" element={<MyHotels/>}/>
+          <Route path="/myCities" element={<MyCity/>}/>
+          <Route path="/NewHotel" element={<NewHotels/>} />
+          <Route path="/NewCity" element={<NewCity/>} />
+        </Route>
+        <Route element={<ProtectedRoute isAllowed={!!logged} reDirect='/SignIn'/>}>
+          <Route path="/myshows" element={<MyShows/>}/>
+          <Route path="/myitineraries" element={<MyItineraries/>}/>
+          <Route path="/profile" element={<ViewProfile1/>}/>
+          <Route path="/profile/edit" element={<ViewProfile2/>}/>          
+          <Route path="/myshows/newshow" element={<NewShows/>} />
+          <Route path="/myitineraries/newitineraries" element={<NewItineraries/>} />
+        </Route>
       </Routes>
     </Main>
     </>

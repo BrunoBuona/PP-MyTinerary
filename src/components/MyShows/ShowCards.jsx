@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { EditCard } from "./EditShowCard";
 import "./Shows.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import myShowAction from "../../redux/actions/myShowAction";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export default function Cards({ name, photo, description, id }) {
     let [push, setPush] = useState(false);
-    
     const dispatch = useDispatch()
+    let navigate = useNavigate()
     function deleteIt(e) {
     Swal.fire({
         title: 'Are you sure?',
@@ -24,7 +25,8 @@ export default function Cards({ name, photo, description, id }) {
               'Deleted!',
               dispatch(myShowAction.deleteShows(e)),
             'Your file has been deleted.',
-          )
+            )
+            navigate("/myshows")
         }
       })
 }
@@ -34,7 +36,7 @@ export default function Cards({ name, photo, description, id }) {
         <img className="card-image" src={photo} alt={name} height="250" />
         <article>
           <h4>{name}</h4>
-          <p>Capacity: {description}</p>
+          <p>{description}</p>
           <div className="card-btns">
             <button className="btn" value={id} onClick={() => setPush(!push)}>
               Edit
