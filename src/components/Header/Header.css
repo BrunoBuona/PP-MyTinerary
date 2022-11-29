@@ -112,3 +112,7 @@
     color: white;
     margin-left: 1.2rem;
   }
+
+  .perfile{
+    display: flex;
+  }
