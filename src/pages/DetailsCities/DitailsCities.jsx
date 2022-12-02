@@ -25,7 +25,6 @@ const DitailsCities = () => {
             .then(res => setItinerarios(res.data.response))
             .catch((error) => console.log(error))
     }, [id])
-    console.log(itinerarios);
     if (citi.length !== 0) {
         return (
             <>
