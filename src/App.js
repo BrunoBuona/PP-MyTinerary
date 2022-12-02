@@ -29,8 +29,6 @@ function App() {
   let logged = user.token
   let role = user.token
   let admin = role.role === "admin"
-  console.log(admin)
-
 
   return (
     <>

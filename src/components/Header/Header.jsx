@@ -14,7 +14,6 @@ function Header() {
     const dispatch = useDispatch();
     let userData = useSelector((state) => state.loginReducer);
     let { logged, photo, name } = userData?.token;
-    console.log(logged, photo, name);
 
     let adminData = useSelector((state) => state.loginReducer);
     let { role } = adminData?.token;
