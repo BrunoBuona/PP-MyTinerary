@@ -63,12 +63,12 @@ const DitailsCities = () => {
                                     </div>
                                 </div>
                                 <NewComments id={e._id} />
+                                <div className="btn">
                                 <button className="btn" value={e._id} onClick={() => setPush(!push)}>
                                     Show Comments
                                 </button>
-                                <div>
-                                    {push ? <Comments id={e._id} /> : undefined}
                                 </div>
+                                    {push ? <Comments id={e._id} /> : undefined}
                             </div>
                         </div>
 
