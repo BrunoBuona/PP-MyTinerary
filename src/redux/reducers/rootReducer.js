@@ -6,6 +6,7 @@ import myShowReducer from "./myHotelReducer"
 import myCityReducer from "./myCityReducer"
 import myItineraryReducer from "./myItineraryReducer"
 import loginReducer from "./loginReducer"
+import reactionReducer from "./reactionReducer"
 
 const rootReducer = {
     hotelReducer,
@@ -16,6 +17,7 @@ const rootReducer = {
     myCityReducer,
     myItineraryReducer,
     loginReducer,
+    reactionReducer
 }
 
 export default rootReducer;
