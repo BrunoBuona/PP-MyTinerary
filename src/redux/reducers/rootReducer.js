@@ -6,13 +6,8 @@ import myShowReducer from "./myHotelReducer"
 import myCityReducer from "./myCityReducer"
 import myItineraryReducer from "./myItineraryReducer"
 import loginReducer from "./loginReducer"
-import reactionReducer from "./reactionReducer"
 import tokenReducer from "./tokenReducer"
-// import commentReducer from "./commentReducer"
-
 import reactionReducer from "./reactionReducer"
-
-import tokenReducer from "./tokenReducer"
 // import commentReducer from "./commentReducer"
 
 const rootReducer = {

@@ -32,8 +32,6 @@ export default function CardsItinerary({ name, photo, description, id }) {
     <div>
       <div className="card">
         <img className="card-image" src={photo[0]} alt={name} height="250" />
-        <img className="card-image" src={photo[1]} alt={name} height="250" />
-        <img className="card-image" src={photo[2]} alt={name} height="250" />
         <article>
           <h4>{name}</h4>
           <p>Description: {description}</p>

@@ -18,7 +18,7 @@ return(
                 <img className="img" onClick={hidee} src="https://e7.pngegg.com/pngimages/363/898/png-clipart-equals-sign-computer-icons-equality-symbol-symbol-miscellaneous-rectangle.png"  width="40" height="30"alt="-" />
                 <ul className="ul">
                     <li className="d">
-                        <button onClick={onClick} className="button-singout">
+                        <button onClick={onClick} className="button-singout ancorLink">
                             SignOut
                         </button>
                     </li>
