@@ -7,6 +7,7 @@ import myCityReducer from "./myCityReducer"
 import myItineraryReducer from "./myItineraryReducer"
 import loginReducer from "./loginReducer"
 import tokenReducer from "./tokenReducer"
+import reactionReducer from "./reactionReducer"
 // import commentReducer from "./commentReducer"
 
 const rootReducer = {
@@ -18,8 +19,10 @@ const rootReducer = {
     myCityReducer,
     myItineraryReducer,
     loginReducer,
+    reactionReducer,
     tokenReducer,
     // commentReducer
+
 }
 
 export default rootReducer;
