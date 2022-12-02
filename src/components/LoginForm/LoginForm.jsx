@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { BASE_URL } from "../../api/url";
 import { useDispatch } from "react-redux";
 import loginAction from "../../redux/actions/loginForm";
+import  tokenAction from "../../redux/actions/tokenAction";
 import { useNavigate } from "react-router-dom";
 const Swal = require("sweetalert2");
 
@@ -26,6 +27,7 @@ function LoginForm() {
       if (res.data.success) {
       let tokenx = res.data.response.token
       dispatch(loginAction.getToken(tokenx))
+      dispatch(tokenAction.getTokenKey(tokenx))
       localStorage.setItem("token", tokenx)
       Swal.fire({
         title: 'Successfully Login',
