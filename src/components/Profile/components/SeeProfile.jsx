@@ -16,6 +16,7 @@ export default function SeeProfile() {
             })
         }
     }, [])
+    console.log(user)
     return (
         <>
             <div className="col-2-header">
