@@ -31,3 +31,6 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(91, 91, 91);
 }
+.text-align-center{
+    text-align: center;
+}
