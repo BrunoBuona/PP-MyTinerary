@@ -8,7 +8,7 @@ import myItineraryReducer from "./myItineraryReducer"
 import loginReducer from "./loginReducer"
 import tokenReducer from "./tokenReducer"
 import reactionReducer from "./reactionReducer"
-// import commentReducer from "./commentReducer"
+ import commentReducer from "./commentReducer"
 
 const rootReducer = {
     hotelReducer,
@@ -21,7 +21,7 @@ const rootReducer = {
     loginReducer,
     reactionReducer,
     tokenReducer,
-    // commentReducer
+     commentReducer
 
 }
 

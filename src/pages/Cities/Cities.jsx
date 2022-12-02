@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import cityAction from "../../redux/actions/cityAction";
 import cityFilterAction from '../../redux/actions/cityFilterActions'
+import { BASE_URL } from "../../api/url";
+import NewComments from "../../components/DetailsHotel/NewComments";
 
 
 function Cities3 () {
@@ -19,7 +21,7 @@ function Cities3 () {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/cities`)
+        axios.get(`${BASE_URL}/api/cities`)
             .then(res => setCheckCities(res.data.response))
             .catch(err => console.log(err.message))
     }, [])

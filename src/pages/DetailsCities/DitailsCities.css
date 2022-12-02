@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+
 }
 .main-details-City{
     min-height: 50vh;
@@ -61,7 +62,10 @@
     gap: 2rem;
 }
 
-
+.btn{
+  
+    text-align: center!important;
+}
 .h3-actividades{
     color: aliceblue;
     text-align: center;
@@ -87,7 +91,10 @@
         height: 30vh;
     }
 }
-
+.text-to-center{
+    display: flex;
+    justify-content: center;
+}
 @media screen and (max-width: 900px){
     .main-details{
         height: auto;
