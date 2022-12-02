@@ -1,2 +1,2 @@
-export const BASE_URL = 'https://back-la-pandita-production.up.railway.app'
+export const BASE_URL = 'http://localhost:8000'
 

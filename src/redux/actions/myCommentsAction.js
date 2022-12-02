@@ -18,9 +18,16 @@ const deleteComment = createAsyncThunk("deleteShows", async (id) => {
         error: true,
       };
     }
-  });
+    
+  })
+  const getCommentsByShow = createAsyncThunk('getCommentsByShow', async(prop)=>{
+    const res = await axios.get(`${BASE_URL}/api/comment?showId=${prop}`)
+    return{commentList: res.data.response}
+  })
+  
 const myCommentsAction ={
-    deleteComment
+    deleteComment,
+    getCommentsByShow
 }
 
 export default myCommentsAction;

@@ -12,7 +12,7 @@ export default function NewComments(prop) {
     let userToken = user.tokenKey
     const commentRef = useRef()
     const dateRef = useRef(new Date())
-    const showIdRef = useRef(id)
+    const itineraryIdRef = useRef(id)
     const formRef = useRef()
 
     async function submit(e) {
@@ -32,7 +32,7 @@ export default function NewComments(prop) {
         }
         async function publishComment(){
             const dataComment = {
-                showId: showIdRef.current,
+                itineraryId: itineraryIdRef.current,
                 comment: commentRef.current.value,  
                 date: dateRef.current,
             }

@@ -4,12 +4,15 @@ import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
-import {BASE_URL} from '../../api/url' 
+import { BASE_URL } from '../../api/url'
+import NewComments from "../../components/DetailsHotel/NewComments";
+import Comments from './Comments'
 
 const DitailsCities = () => {
 
     const [citi, setCiti] = useState([])
     const [itinerarios, setItinerarios] = useState([])
+    const [push, setPush] = useState(false);
 
     let { id } = useParams()
 
@@ -22,7 +25,7 @@ const DitailsCities = () => {
             .then(res => setItinerarios(res.data.response))
             .catch((error) => console.log(error))
     }, [id])
-console.log(itinerarios);
+    console.log(itinerarios);
     if (citi.length !== 0) {
         return (
             <>
@@ -39,30 +42,38 @@ console.log(itinerarios);
                         </div>
                     </div>
                 </div>
-            {itinerarios.map((e) => {
-                return(
-                                    <div>
-                    <div className='main-details-City'>
-                        <h3 className='h3-actividades'>Activity!</h3>
-                        <div className="main-space">
-                            <div className='MainHotel'>
-                                <div className='left-mh'>
-                                    <img className='img-mh' src={e.photo[0]} alt={e.name} />
-                                    <img className='img-mh' src={e.photo[1]} alt={e.name} />
-                                    <img className='img-mh' src={e.photo[2]} alt={e.name} />
+                {itinerarios.map((e) => {
+                    console.log(e._id)
+                    return (
+                        <div>
+                            <div className='main-details-City'>
+                                <h3 className='h3-actividades'>Activity!</h3>
+                                <div className="main-space">
+                                    <div className='MainHotel'>
+                                        <div className='left-mh'>
+                                            <img className='img-mh' src={e.photo[0]} alt={e.name} />
+                                            <img className='img-mh' src={e.photo[1]} alt={e.name} />
+                                            <img className='img-mh' src={e.photo[2]} alt={e.name} />
+                                        </div>
+                                        <div className='right-mh'>
+                                            <h3>{e.name}</h3>
+                                            <p>{e.description}</p>
+                                            <p>Price: {e.price} $USD</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className='right-mh'>
-                                    <h3>{e.name}</h3>
-                                    <p>{e.description}</p>
-                                    <p>Price: {e.price} $USD</p>
+                                <NewComments id={e._id} />
+                                <button className="btn" value={e._id} onClick={() => setPush(!push)}>
+                                    Show Comments
+                                </button>
+                                <div>
+                                    {push ? <Comments id={e._id} /> : undefined}
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                )
-            })}
+                    )
+                })}
             </>
         )
     }

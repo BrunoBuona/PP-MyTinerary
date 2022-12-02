@@ -1,5 +1,5 @@
 import {createReducer} from '@reduxjs/toolkit'
-import commentsActions  from '../actions/commentsAction'
+import commentsActions  from '../actions/myCommentsAction'
 
 const initialState = {
   commentList: []
