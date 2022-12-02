@@ -24,7 +24,7 @@ export default function Comments(prop) {
             .then((res) => {
                 setComments(res.data.response);
             },);
-    }, );
+    },[comments] );
     async function submit(e) {
         Swal.fire({
             title: '¿Delete Comment?',
