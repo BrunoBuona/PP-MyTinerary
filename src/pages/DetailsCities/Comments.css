@@ -9,7 +9,8 @@
 }
 .comment-box-citys{
     display: flex;
-    width: 95%;
+    width: 100%;
+    flex-wrap: wrap;
     height: 100%;
     align-items: center;
     margin: 10px;
