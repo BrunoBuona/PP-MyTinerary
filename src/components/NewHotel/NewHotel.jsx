@@ -120,7 +120,7 @@ function NewHotels() {
                     <select
                     type="text"
                     placeholder="Hotel ID"
-                    className='form__input_show'
+                    className='select'
                     ref={citiId}
                 ><option value="">Choose an Hotel</option>
                 {cityList.map((hotel) => {

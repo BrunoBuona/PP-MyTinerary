@@ -4,8 +4,10 @@ import Swal from "sweetalert2";
 import { useState } from "react";
 import "../MyHotels/EditCard.css";
 import {BASE_URL} from "../../api/url";
+import { useNavigate } from "react-router-dom";
 
 export function EditCard({ id }) {
+  const navigate = useNavigate()
   const [name, setName] = useState("");
   const [population, setPopulation] = useState("");
   const [photo, setPhoto] = useState("");
@@ -22,6 +24,7 @@ export function EditCard({ id }) {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     }).then((res) => {
+      navigate("/myCities")
       if (res.data.success) {
         Swal.fire({
           title: "Success",

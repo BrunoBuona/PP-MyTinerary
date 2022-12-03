@@ -8,6 +8,7 @@ import { BASE_URL } from '../../api/url'
 import NewComments from "../../components/DetailsHotel/NewComments";
 import Comments from './Comments'
 
+
 const DitailsCities = () => {
 
     const [citi, setCiti] = useState([])

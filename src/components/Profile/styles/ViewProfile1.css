@@ -97,7 +97,7 @@
   width: 40%;
   gap: 1rem;
 }
-input{
+.input-profile{
     background-color: rgb(0, 0, 0);
     color: white;
     border: none;
@@ -105,7 +105,7 @@ input{
     border-bottom: 1px solid rgb(149, 0, 0);
     outline: none;
 }
-label{
+.label-profile{
     color: rgb(255, 115, 115);
     font-weight: bold;
     text-transform: uppercase;
