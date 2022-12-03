@@ -80,7 +80,7 @@ export default function NewReactionC() {
     }
 
     return (
-    <div className='contenedor-form'>
+    <div className='contenedor-form2'>
         <h1 className='title-reactions'>New Reactions</h1>
     <form className='form-new-reac' ref={formRef}>       
           <label className='label-formnew'>

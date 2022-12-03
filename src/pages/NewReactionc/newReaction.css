@@ -1,17 +1,23 @@
+.contenedor-form2{
+        background-image: url("https://img.freepik.com/free-vector/night-ocean-landscape-full-moon-stars-shine_107791-7397.jpg?w=2000");
+}
 .form-new-reac{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3rem;
     justify-content: center;
-    background-image: url("https://img.freepik.com/free-vector/night-ocean-landscape-full-moon-stars-shine_107791-7397.jpg?w=2000");
+    background-color: rgba(80, 142, 196, 0.301);
 }
 .label-formnew{
     padding: 1rem;
+    color: rgb(157, 211, 211);
 }
 
 .inputinShow{
     margin: .5rem;
+    width: 100%;
+    font-size: 2rem;
 }
 
 .form__inputShow{

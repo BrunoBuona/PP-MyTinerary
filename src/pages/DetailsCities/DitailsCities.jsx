@@ -7,7 +7,7 @@ import { useState } from 'react'
 import { BASE_URL } from '../../api/url'
 import Comments from './Comments'
 import CardItinerary from './CardItinerary'
-
+import NewComments from '../../components/DetailsHotel/NewComments'
 
 
 const DitailsCities = () => {
@@ -49,7 +49,9 @@ const DitailsCities = () => {
                         <div className='center-all'>
                             <div className='main-details-City'>
                                 <h3 className='h3-actividades'>Activity!</h3>
-                                <CardItinerary
+                                <div className="main-space">
+                                    <div className='MainHotel'>
+                                    <CardItinerary
                                 key={e._id}
                                 id={e._id}
                                 name={e.name}
@@ -58,9 +60,15 @@ const DitailsCities = () => {
                                 duration={e.duration}
                                 description={e.description} 
                                 />
-                                <div className='center-all'>
-                                  <Comments id={e._id} />
-                            </div>
+                                    </div>
+                                </div>
+                                <NewComments id={e._id} />
+                                <div className="btn">
+                                <button className="btn" value={e._id} onClick={() => setPush(!push)}>
+                                    Show Comments
+                                </button>
+                                </div>
+                                    {push ? <Comments id={e._id} /> : undefined}
                             </div>
                         </div>
 

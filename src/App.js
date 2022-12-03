@@ -20,6 +20,7 @@ import ViewProfile1 from "./components/Profile/ViewProfile1.jsx";
 import ViewProfile2 from "./components/Profile/ViewProfile2.jsx";
 import NewShows from "./components/NewShow/NewShow";
 import NewItineraries from "./pages/NewItineraries/NewItineraries"
+import NewReactionC from "./pages/NewReactionc/NewReactionC";
 // import { useEffect } from "react";
 // import loginAction from "./redux/actions/loginForm";
 // import { useDispatch } from "react-redux";
@@ -28,12 +29,12 @@ import NewItineraries from "./pages/NewItineraries/NewItineraries"
 
 export default function App() {
   // const dispatch = useDispatch()
-  
-import NewReactionC from "./pages/NewReactionc/NewReactionC";
 
 
 
-function App() {
+
+
+
   let user = useSelector((store) => store.loginReducer)
   let logged = user.token
   let role = user.token
@@ -69,6 +70,7 @@ function App() {
           <Route path="/myCities" element={<MyCity/>}/>
           <Route path="/NewHotel" element={<NewHotels/>} />
           <Route path="/NewCity" element={<NewCity/>} />
+          <Route path="/NewReaction" element={<NewReactionC/>} />
         </Route>
         <Route element={<ProtectedRoute isAllowed={!!logged} reDirect='/SignIn'/>}>
           <Route path="/myshows" element={<MyShows/>}/>
