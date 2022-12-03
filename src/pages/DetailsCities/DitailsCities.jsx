@@ -6,7 +6,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { BASE_URL } from '../../api/url'
 import Comments from './Comments'
-import {CardItinerary} from './CardItinerary'
+import CardItinerary from './CardItinerary'
 
 const DitailsCities = () => {
 
