@@ -45,7 +45,7 @@ const DitailsCities = () => {
                 {itinerarios.map((e) => {
                     console.log(e._id)
                     return (
-                        <div>
+                        <div className='center-all'>
                             <div className='main-details-City'>
                                 <h3 className='h3-actividades'>Activity!</h3>
                                 <div className="main-space">

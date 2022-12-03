@@ -86,7 +86,7 @@ export default function Comments(prop){
     return (
         listComments.map((e) => {
             return (
-                <div className={`comment-box ${token === e.userId._id ? "own-comment" : ""}`}>
+                <div className={`comment-box-citys ${token === e.userId._id ? "own-comment" : ""}`}>
                     <div className='profile-comment-box'>
                         <img className='picture-comment-box' src={`${e.userId.photo}`} alt={`${e.name}`} />
                     </div>
