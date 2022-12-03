@@ -5,7 +5,11 @@ import axios from 'axios';
 import { BASE_URL } from '../../api/url';
 import { useRef } from 'react';
 import Swal from 'sweetalert2'
-
+import { useState } from 'react';
+// usar reload para recargar los comentarios, cada vez q se use un dispatch, mandar el cambio de estado de reload.
+// los dispatch solo traeran datita rika, pero no recargaran la pagina, por eso esta el reload.
+// el reload es un booleano, que se cambia con un setReload(!reload)
+// y se usa en el useEffect, para que cada vez que se cambie el estado de reload, se recargue el componente.
 export default function NewComments(prop) {
     const { id } = prop
     let user = useSelector((store) => store.tokenReducer)
@@ -14,6 +18,7 @@ export default function NewComments(prop) {
     const dateRef = useRef(new Date())
     const itineraryIdRef = useRef(id)
     const formRef = useRef()
+    const [reload, setReload] = useState(false)
 
     async function submit(e) {
         e.preventDefault();
@@ -32,7 +37,7 @@ export default function NewComments(prop) {
         }
         async function publishComment(){
             const dataComment = {
-                itineraryId: itineraryIdRef.current,
+                showId: itineraryIdRef.current,
                 comment: commentRef.current.value,  
                 date: dateRef.current,
             }

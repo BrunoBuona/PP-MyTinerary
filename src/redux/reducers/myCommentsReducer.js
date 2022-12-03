@@ -19,7 +19,6 @@ const commentReducer = createReducer(initialState, (builder) => {
         comments: action.payload.comments,
       };
     })
-
     .addCase(deleteComment.fulfilled, (state, action) => {
       let deleteComment = state.comments.filter(
         (deleteComment) => deleteComment._id !== action.payload.data._id

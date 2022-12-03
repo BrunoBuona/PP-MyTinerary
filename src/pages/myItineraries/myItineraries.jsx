@@ -15,7 +15,7 @@ export default function MyItineraries() {
             .get(`${BASE_URL}/api/myitineraries?userId=${token.id}`)
             .then((res) => setItinerary(res.data.response))
             .catch((err) => err.message);
-    }, []);
+    }, );
 
     return (
         <div className="main-container">

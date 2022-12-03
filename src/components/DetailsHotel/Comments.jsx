@@ -24,7 +24,7 @@ export default function Comments(prop) {
             .then((res) => {
                 setComments(res.data.response);
             },);
-    },[comments] );
+    },[editComment]);
     async function submit(e) {
         Swal.fire({
             title: '¿Delete Comment?',
@@ -62,8 +62,6 @@ export default function Comments(prop) {
             date: date.current,
             showId: showId.current
         }
-        console.log(newUpdate.comment)
-        console.log(e)
         await axios.put(`${BASE_URL}/api/comment/${e}`, newUpdate, { headers: { Authorization: `Bearer ${tokenKey}` } })
     }
     return (
