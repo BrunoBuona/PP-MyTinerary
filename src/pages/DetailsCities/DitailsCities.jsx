@@ -5,9 +5,10 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
 import { BASE_URL } from '../../api/url'
-import NewComments from "../../components/DetailsHotel/NewComments";
 import Comments from './Comments'
 import CardItinerary from './CardItinerary'
+
+
 
 const DitailsCities = () => {
 
@@ -45,7 +46,7 @@ const DitailsCities = () => {
                 {itinerarios.map((e) => {
                     console.log(e._id)
                     return (
-                        <div>
+                        <div className='center-all'>
                             <div className='main-details-City'>
                                 <h3 className='h3-actividades'>Activity!</h3>
                                 <CardItinerary
@@ -57,13 +58,9 @@ const DitailsCities = () => {
                                 duration={e.duration}
                                 description={e.description} 
                                 />
-                                <NewComments id={e._id} />
-                                <div className="btn">
-                                <button className="btn" value={e._id} onClick={() => setPush(!push)}>
-                                    Show Comments
-                                </button>
-                                </div>
-                                    {push ? <Comments id={e._id} /> : undefined}
+                                <div className='center-all'>
+                                  <Comments id={e._id} />
+                            </div>
                             </div>
                         </div>
 

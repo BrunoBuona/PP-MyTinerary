@@ -3,21 +3,18 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { BASE_URL } from '../../api/url'
 import Comments from './Comments';
-import NewComments from './NewComments';
 
 export function ShowPrinter() {
     let [push, setPush] = useState(false);
     let { id } = useParams()
     const [shows,setShows] = useState([])
+    const [reload, setReload] = useState(true)
     useEffect(() => {
       axios.get(`${BASE_URL}/api/shows?hotelId=${id}`)
       .then((res) => {
         setShows(res.data.response);
       });
-    },[id]);
-
-  
-
+    },[]);
     return (
             shows.map((e)=> {
                 return(
@@ -30,14 +27,8 @@ export function ShowPrinter() {
                 <p key={e.id}>{e.description}</p>
                 <p key={e.id} >Price: U$D{e.price} </p>
             </div>
-            <div className='text-center'>
-            <NewComments id={e._id}/>
-            </div>
             <div className='columns-comments'>
-            <button className="btn" value={e._id} onClick={() => setPush(!push)}>
-              Show Comments
-            </button>
-            {push ? <Comments id={e._id}/> : undefined }
+             <Comments id={e._id}/> 
             </div>
         </div>)})
     )}

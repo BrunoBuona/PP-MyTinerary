@@ -3,13 +3,29 @@ import React, { useRef } from 'react';
 import axios from 'axios';
 import { BASE_URL } from '../../api/url'
 import Swal from 'sweetalert2';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import {useSelector} from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 function NewCity() {
-
+    const navigate = useNavigate()
+    const token = useSelector((store) => store.loginReducer.token)
+    const [continents, setCheckCities] = useState([])
+    const userId = useRef(token.id)
     const nameCity = useRef()
     const continentCity = useRef()
     const populationCity = useRef()
     const photoCity = useRef()
-    const userIdRef = useRef()
+
+    useEffect(() => {
+        return async function fetchdata() {
+            axios.get(`${BASE_URL}/api/cities`)
+                .then(res => {
+                    let continent = Array.from(new Set(res.data.response.map(e => e.continent)))
+                    setCheckCities(continent)
+                })
+        }
+    }, [])
 
     async function submit(e) {
         e.preventDefault()
@@ -18,37 +34,22 @@ function NewCity() {
             continent: continentCity.current.value,
             population: populationCity.current.value,
             photo: photoCity.current.value,
-            userId: userIdRef.current.value
+            userId: userId.current
         }
         try {
             let res = await axios.post(`${BASE_URL}/api/cities`, dataCity)
             let res2 = await axios.get(`${BASE_URL}/api/cities`)
             let citiesCreated = res2.data.response
             if (res.data.success) {
-                let timerInterval
                 Swal.fire({
                     title: 'City was Created succesfully!',
                     html: 'Redirecting to that page in <b></b> miliseconds.',
-                    timer: 2500,
+                    timer: 2000,
                     timerProgressBar: true,
-                    didOpen: () => {
-                        Swal.showLoading()
-                        const b = Swal.getHtmlContainer().querySelector('b')
-                        timerInterval = setInterval(() => {
-                            b.textContent = Swal.getTimerLeft()
-                        }, 100)
-                    },
                     willClose: () => {
-                        clearInterval(timerInterval)
-                        citiesCreated.filter(e => e.name === dataCity.name).map(e => window.location.href = `/detailscities/${e._id}`)
+                        citiesCreated.filter(e => e.name === dataCity.name).map(e => navigate(`/detailscities/${e._id}`))
                     }
-                }).then((result) => {
-                    /* Read more about handling dismissals below */
-                    if (result.dismiss === Swal.DismissReason.timer) {
-                        console.log('I was closed by the timer')
-                    }
-                })
-            }
+                })}
             else {
                 Swal.fire({
                     icon: 'error',
@@ -57,23 +58,11 @@ function NewCity() {
                 })
             }
         } catch (err) {
-            if (err.response.data.message === `hotels validation failed: userId: Cast to ObjectId failed for value "${dataCity.userId}" (type string) at path "userId" because of "BSONTypeError"`) {
+            if(err) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Error 404',
                     text: 'User ID is invalid. Please try again!',
-                })
-            } else if (err.response.data.message === `cities validation failed: citiId: Cast to ObjectId failed for value "${dataCity.citiId}" (type string) at path "citiId" because of "BSONTypeError"`) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error 404',
-                    text: 'City ID is invalid. Please try again!',
-                })
-            } else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error 404',
-                    text: 'User ID and City ID are invalid. Please try again!',
                 })
             }
         }
@@ -82,7 +71,7 @@ function NewCity() {
     return (
         <>
             <form className="form-hotel" >
-                <div className="form-body">
+                <div className="form-body2">
                     <h1 className='title'>New Place</h1>
                     <h2 className='title2'>¡Create new City!</h2>
                     <input
@@ -90,13 +79,6 @@ function NewCity() {
                         placeholder="Name of city"
                         className='form__input'
                         ref={nameCity}
-                        required
-                    />
-                    <input
-                        type="text"
-                        placeholder="Continent"
-                        className='form__input'
-                        ref={continentCity}
                         required
                     />
                     <input
@@ -113,13 +95,16 @@ function NewCity() {
                         ref={populationCity}
                         required
                     />
-                    <input
+                    <select
                         type="text"
-                        placeholder="Admin"
-                        className='form__input'
-                        ref={userIdRef}
-                        required
-                    />
+                        className="select"
+                        ref={continentCity}>
+                        <option value="">Choose City's Continent</option>
+                        {continents.map((continent) => {
+                            return (
+                                <option value={continent}>{continent}</option>
+                            )
+                        })} </select>
                     <div className="submit">
                         <button className='submit2' onClick={submit}>Create</button>
                     </div>

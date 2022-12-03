@@ -7,6 +7,16 @@
     margin-bottom: 20px;
     background-color: rgba(136, 136, 136, 0.864);
 }
+.comment-box-citys{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    height: 100%;
+    align-items: center;
+    margin: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(136, 136, 136, 0.864);
+}
 .none{
     display: none;
 }

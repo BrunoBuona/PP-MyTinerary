@@ -4,8 +4,10 @@ import "../MyHotels/Cards.css"
 import { useDispatch } from "react-redux";
 import myCityAction from "../../redux/actions/myCityAction"
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 export default function Cards({ name, photo, description, id }) {
+  let navigate = useNavigate()
     let [push, setPush] = useState(false);
     
     const dispatch = useDispatch()
@@ -24,6 +26,7 @@ export default function Cards({ name, photo, description, id }) {
               'Deleted!',
               dispatch(myCityAction.deleteCities(e)),
             'Your file has been deleted.',
+            navigate("./")
           )
         }
       })
@@ -34,7 +37,7 @@ export default function Cards({ name, photo, description, id }) {
         <img className="card-image" src={photo} alt={name} height="250" />
         <article>
           <h4>{name}</h4>
-          <p>population: {description}</p>
+          <p>Population: {description}</p>
           <div className="card-btns">
             <button className="btn" value={id} onClick={() => setPush(!push)}>
               Edit

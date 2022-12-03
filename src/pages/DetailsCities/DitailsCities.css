@@ -8,7 +8,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 
+}
+.center-all{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    color:white;
 }
 .main-space{
     margin-top: 100px;
@@ -18,7 +27,7 @@
     align-items: center;
     flex-direction: row;
     gap: 2rem;
-    margin: 2rem;
+    width: 100%;
 }
 .show-space{
     display: flex;
@@ -89,8 +98,8 @@
     text-align: center;
     font-size: 2rem;
 }
-
-@media screen and (max-width: 800px){
+/* 
+@media screen and (max-width: 770px){
     .main-details{
         height: 10rem;
         background-color: rgb(22, 22, 22);
@@ -131,4 +140,4 @@
     p{
         font-size: 23px;
     }
-}
+} */

@@ -7,8 +7,6 @@ import { useDispatch } from "react-redux";
 import cityAction from "../../redux/actions/cityAction";
 import cityFilterAction from '../../redux/actions/cityFilterActions'
 import { BASE_URL } from "../../api/url";
-import NewComments from "../../components/DetailsHotel/NewComments";
-
 
 function Cities3 () {
     let searchRef = useRef(null)

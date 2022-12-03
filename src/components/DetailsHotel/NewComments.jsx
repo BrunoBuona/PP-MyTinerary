@@ -1,11 +1,10 @@
 import { React } from 'react';
 import './NewComments.css'
-import { useSelector } from 'react-redux';
-import axios from 'axios';
-import { BASE_URL } from '../../api/url';
+import { useDispatch, useSelector } from 'react-redux';
+import commentsActions from '../../redux/actions/commentsActions';
 import { useRef } from 'react';
 import Swal from 'sweetalert2'
-
+import { useState } from 'react';
 export default function NewComments(prop) {
     const { id } = prop
     let user = useSelector((store) => store.tokenReducer)
@@ -14,7 +13,8 @@ export default function NewComments(prop) {
     const dateRef = useRef(new Date())
     const itineraryIdRef = useRef(id)
     const formRef = useRef()
-
+    const dispatch = useDispatch()
+    const [state, setstate] = useState(false)
     async function submit(e) {
         e.preventDefault();
             Swal.fire({
@@ -27,35 +27,34 @@ export default function NewComments(prop) {
                 if (result.isConfirmed) {
                     publishComment()
                 }
-                    
               })
         }
         async function publishComment(){
             const dataComment = {
-                itineraryId: itineraryIdRef.current,
+                showId: itineraryIdRef.current,
                 comment: commentRef.current.value,  
                 date: dateRef.current,
             }
             try{
-                let res = await axios.post(`${BASE_URL}/api/comment/`, dataComment, {headers: {
-                        Authorization: `Bearer ${userToken}`,
-                    },
-                })  
-                if(res.data.success){
+                let datos = {
+                    token: userToken,
+                    data: dataComment
+                }
+                await dispatch(commentsActions.reload(!state))
+                let res = await dispatch(commentsActions.createComment(datos))
+                if(res.payload.data.success){
                     formRef.current.reset()
                    return( 
                     Swal.fire('Comment published!', '', 'success')
                     )
                 }
                 else{
-                    Swal.fire(`Errors: ${res.data.message.join(", ")}`)
+                    Swal.fire(`Errors: ${res.payload.data.message.join(", ")}`)
                 }
             }catch(err){
                 Swal.fire(`Error. You must be logged in.`)
             }
         }
-
-
     return (
         <div className='text-center'>
             <form ref={formRef}  onSubmit={submit}>

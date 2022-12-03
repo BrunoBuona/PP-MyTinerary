@@ -2,13 +2,22 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { BASE_URL } from "../../api/url";
 
-const createComment = createAsyncThunk("createComment", async (datos,token) => {
+const getCommentShow = createAsyncThunk("getComment", async (id) => {
+  const res = await axios.get(`${BASE_URL}/api/comment?showId=${id}`);
+  return res.data
+});
+
+const getCommentItinerary = createAsyncThunk("getComment", async (id) => {
+  const res = await axios.get(`${BASE_URL}/api/comment?itineraryId=${id}`);
+  return res.data
+});
+const reload = createAsyncThunk("reload", async (booleano) => {
+  return booleano
+});
+const createComment = createAsyncThunk("createComment", async ({token, data}) => {
   try {
-    const res = await axios.post(`${BASE_URL}/api/comments`, datos, { headers: { Authorization: `Bearer ${token}` } });
-    return {
-      success: true,
-      comments: res.response.data
-    };
+    const res = await axios.post(`${BASE_URL}/api/comment`, data, { headers: { Authorization: `Bearer ${token}` } });
+    return res
   } catch (error) {
     return {
       success: false,
@@ -16,27 +25,14 @@ const createComment = createAsyncThunk("createComment", async (datos,token) => {
     };
   }
 });
-const getComment = createAsyncThunk("getComment", async ({ id }) => {
+
+const deleteComment = createAsyncThunk("deleteComment", async ({token, id }) => {
   try {
-    const res = await axios.get(`${BASE_URL}/api/comments?showId=${id}`);
-    return {
-      comments: res.data.response,
-    };
-  } catch (error) {
-    console.log(error);
-    return {
-      payload: "Error",
-    };
-  }
-});
-const deleteComment = createAsyncThunk("deleteComment", async ({ idComment, token }) => {
-    try {
-      const res = await axios.delete(`${BASE_URL}/api/comments/${idComment}`, { headers: { Authorization: `Bearer ${token}` } });
+      const res = await axios.delete(`${BASE_URL}/api/comment/${id}`, { headers: { Authorization: `Bearer ${token}` } });
       return {
-        shows: res.data,
-        data: res.data.res,
-      };
-    } catch (error) {
+        success: true
+      }
+    }catch(error) {
       if (error.response) {
         throw error.response.data.message.join("\n");
       } else {
@@ -45,28 +41,26 @@ const deleteComment = createAsyncThunk("deleteComment", async ({ idComment, toke
     }
   }
 );
-const editComment = createAsyncThunk("editComment", async (data) => {
-  let headers = { headers: { Authorization: `Bearer ${data.token}` } };
-  let url = `${BASE_URL}/api/comments/${data.id}`;
+
+const editComment = createAsyncThunk("editComment", async ({token, id, newUpdate}) => {
   try {
-    let res = await axios.put(url, data.edit, headers)
-    return {
-      success: true,
-      id: res.data.id,
-      comment: data.edit.comment
-    }
-  } catch (error) {
-    console.log(error);
+    let res = await axios.put(`${BASE_URL}/api/comment/${id}`, newUpdate, { headers: { Authorization: `Bearer ${token}` } })
+    return console.log(res)
+  }catch(error) {
     return {
       success: false,
       response: "ocurrió un error",
     };
   }
 })
+
 const commentsActions = {
+  getCommentShow,
+  getCommentItinerary,
   createComment,
   deleteComment,
   editComment,
-  getComment,
+  reload,
 };
+
 export default commentsActions;

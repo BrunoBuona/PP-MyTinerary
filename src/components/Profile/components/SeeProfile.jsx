@@ -16,7 +16,6 @@ export default function SeeProfile() {
             })
         }
     }, [])
-    console.log(user)
     return (
         <>
             <div className="col-2-header">
@@ -24,18 +23,18 @@ export default function SeeProfile() {
             </div>
             <div className='userData-cols'>
                 <form className='col-2-userData-1'>
-                    <label> Name: </label>
-                    <input type="text" value={`${user.name}`} disabled />
-                    <label> LastName: </label>
-                    <input type="text" value={`${user.lastName}`} disabled />
-                    <label> Photo: </label>
-                    <input type="text" value={`${user.photo}`} disabled />
+                    <label className='label-profile'> Name: </label>
+                    <input className='input-profile' type="text" value={`${user.name}`} disabled />
+                    <label className='label-profile'> LastName: </label>
+                    <input className='input-profile' type="text" value={`${user.lastName}`} disabled />
+                    <label className='label-profile'> Photo: </label>
+                    <input className='input-profile' type="text" value={`${user.photo}`} disabled />
                 </form>
                 <form className='col-2-userData-2'>
-                    <label> Age: </label>
-                    <input type="number" value={`${user.age}`} disabled />
-                    <label> Email: </label>
-                    <input type="text" value={`${user.email}`} disabled />
+                    <label className='label-profile'> Age: </label>
+                    <input className='input-profile' type="number" value={`${user.age}`} disabled />
+                    <label className='label-profile'> Email: </label>
+                    <input className='input-profile' type="text" value={`${user.email}`} disabled />
                 </form>
             </div>
         </>)
