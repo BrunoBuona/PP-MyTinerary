@@ -11,9 +11,9 @@ let idItinerary = props.id
   return (
     <div className="main-details-City">
       <div className="left-mh">
-        <img className="img-mh" src={photo[1]} alt={name}/>
-        <img className="img-mh" src={photo[2]} alt={name}/>
-        <img className="img-mh" src={photo[0]} alt={name}/>
+        <img className="img-mh3" src={photo[1]} alt={name}/>
+        <img className="img-mh3" src={photo[2]} alt={name}/>
+        <img className="img-mh3" src={photo[0]} alt={name}/>
       </div>
       <div className="right-mh-2">
         <h3>{name}</h3>

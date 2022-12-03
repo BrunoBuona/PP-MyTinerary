@@ -38,7 +38,7 @@
     margin-bottom: 30px;
     flex-wrap: wrap;
 }
-.MainHotel{
+.MainCities{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,12 +57,12 @@
     align-items: center;
     flex-direction: column;
 }
-.img-mh{
+.img-mh3{
     height: 50vh;
-    width: 100%;
+    width: 80vh;
 }
 
-.right-mh{
+.right-mh2{
     width: 50%;
     height: 100%;
     display: flex;
@@ -98,32 +98,32 @@
     text-align: center;
     font-size: 2rem;
 }
-/* 
+
 @media screen and (max-width: 770px){
-    .main-details{
+    .main-details2{
         height: 10rem;
         background-color: rgb(22, 22, 22);
     }
-    .img-mh{
+    .img-mh3{
         height: 50vh;
         width: 200%;
     }
-    .MainHotel{
+    .MainHotel2{
         flex-direction: column;
         width: 27rem;
     }
-    .right-mh{
+    .right-mh2{
         width: 100%;
     }
-    .img-mh {
+    .img-mh2{
         height: 30vh;
     }
 }
-.text-to-center{
+/* .text-to-center2{
     display: flex;
     justify-content: center;
-}
-@media screen and (max-width: 900px){
+} */
+/* @media screen and (max-width: 900px){
     .main-details{
         height: auto;
         background-color: rgb(22, 22, 22);
@@ -140,4 +140,5 @@
     p{
         font-size: 23px;
     }
-} */
+}
+ */
