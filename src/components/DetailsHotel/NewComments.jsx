@@ -14,7 +14,7 @@ export default function NewComments(prop) {
     const itineraryIdRef = useRef(id)
     const formRef = useRef()
     const dispatch = useDispatch()
-
+    const [state, setstate] = useState(false)
     async function submit(e) {
         e.preventDefault();
             Swal.fire({
@@ -40,6 +40,7 @@ export default function NewComments(prop) {
                     token: userToken,
                     data: dataComment
                 }
+                await dispatch(commentsActions.reload(!state))
                 let res = await dispatch(commentsActions.createComment(datos))
                 if(res.payload.data.success){
                     formRef.current.reset()

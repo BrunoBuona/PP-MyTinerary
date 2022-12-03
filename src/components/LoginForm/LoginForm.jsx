@@ -29,6 +29,7 @@ function LoginForm() {
       dispatch(loginAction.getToken(tokenx))
       dispatch(tokenAction.getTokenKey(tokenx))
       localStorage.setItem("token", tokenx)
+      localStorage.setItem("tokenUser", JSON.stringify(dataLogin))
       Swal.fire({
         title: 'Successfully Login',
         html: "We're redirecting you to Home Page...",

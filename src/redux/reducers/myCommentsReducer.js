@@ -1,13 +1,16 @@
 import { createReducer } from "@reduxjs/toolkit";
-// import commentsActions from "../actions/commentsActions";
+import commentsActions from "../actions/commentsActions";
 
-// const { getComment, createComment, deleteComment, editComment } = commentsActions;
+const {reload } = commentsActions;
 
 const initialState = {
   comments: [],
 };
 
 const commentReducer = createReducer(initialState, (builder) => {
+  builder.addCase(reload.fulfilled, (state, action) => {
+    return action.payload
+  })
   // builder
   //   .addCase(getComment.fulfilled, (state, action) => {
   //     return { ...state, comments: action.payload.comments };

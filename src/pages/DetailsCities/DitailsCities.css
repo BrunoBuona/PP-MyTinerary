@@ -5,6 +5,7 @@
 .main-details-City{
     min-height: 50vh;
     background-color: rgb(22, 22, 22);
+    width: 100%;
 
 }
 .center-all{
@@ -12,6 +13,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-wrap: wrap;
+    color:white;
 }
 .main-space{
     margin-top: 100px;
@@ -21,7 +24,7 @@
     align-items: center;
     flex-direction: row;
     gap: 2rem;
-    margin: 2rem;
+    width: 100%;
 }
 .show-space{
     display: flex;

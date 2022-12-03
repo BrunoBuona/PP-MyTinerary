@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { json, Route, Routes } from "react-router-dom";
 import {LoginForm} from "./components/LoginForm/LoginForm";
 import {NotFound} from "./components/404/NotFound.jsx";
 import {Main} from "./layouts/Main"
@@ -20,16 +20,32 @@ import ViewProfile1 from "./components/Profile/ViewProfile1.jsx";
 import ViewProfile2 from "./components/Profile/ViewProfile2.jsx";
 import NewShows from "./components/NewShow/NewShow";
 import NewItineraries from "./pages/NewItineraries/NewItineraries"
+// import { useEffect } from "react";
+// import loginAction from "./redux/actions/loginForm";
+// import { useDispatch } from "react-redux";
+// import { BASE_URL } from "./api/url";
+// import axios from "axios";
 
-
-
-
-function App() {
+export default function App() {
+  // const dispatch = useDispatch()
   let user = useSelector((store) => store.loginReducer)
   let logged = user.token
   let role = user.token
   let admin = role.role === "admin"
-
+//   async function relogin(){
+//   let tokenKey = localStorage.getItem("token")
+//   if(tokenKey){
+//     let asd = await dispatch(loginAction.reLogin(tokenKey))
+//     return asd
+//   }}
+//   let data = relogin()
+//  async function relogin2(){
+//     return await axios.post(`${BASE_URL}/api/auth/signin`, data)
+//   }
+//   useEffect (()=>{
+//    relogin2()
+//   },[])
+  
   return (
     <>
     <Main>
@@ -61,5 +77,3 @@ function App() {
     </>
   );
 }
-
-export default App;

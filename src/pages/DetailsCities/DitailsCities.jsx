@@ -5,7 +5,6 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
 import { BASE_URL } from '../../api/url'
-import NewComments from "./NewComments";
 import Comments from './Comments'
 
 
@@ -62,13 +61,9 @@ const DitailsCities = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <NewComments id={e._id} />
-                                <div className="btn">
-                                <button className="btn" value={e._id} onClick={() => setPush(!push)}>
-                                    Show Comments
-                                </button>
-                                </div>
-                                    {push ? <Comments id={e._id} /> : undefined}
+                                <div className='center-all'>
+                                  <Comments id={e._id} />
+                            </div>
                             </div>
                         </div>
 
