@@ -1,32 +1,45 @@
 import { useRef } from 'react';
 import { React, useState, useEffect } from 'react';
-import axios from 'axios'
-import { BASE_URL } from '../../api/url'
 import './Comments.css'
-// import myCommentsAction from '../../redux/actions/myCommentsAction';
+import commentsActions from '../../redux/actions/commentsActions';
 import { useDispatch, useSelector } from 'react-redux';
 import Swal from 'sweetalert2';
 
-export default function Comments(prop) {
-    let {id} = prop
-    const date = useRef(new Date())
-    const itineraryId = useRef(prop.id)
-    const comment = useRef()
-    console.log(prop.id)
-    // const dispatch = useDispatch()
+export default function Comments(prop){
+    // Asignaciones de importacion/props
+    const dispatch = useDispatch()
+    let idShow = prop.id
+
+    // Store
     let user = useSelector((store) => store.loginReducer)
-    let token = user.token.id
     let tokenKey = useSelector((store) => store.tokenReducer.tokenKey)
+    let token = user.token.id
+
+    // States
     const [comments, setComments] = useState([])
     const [editComment, setEdit] = useState(false)
     const [commentary, setCommentary] = useState('')
+
+    // Refs
+    const formRef = useRef()
+    const date = useRef(new Date())
+    const showId = useRef(prop.id)
+    const comment = useRef()
+
+    // Inicialización y recarga de comentarios
+    const [listComments, setListComments] = useState([])
+    const [reload, setReload] = useState(true)
     useEffect(() => {
-        axios.get(`${BASE_URL}/api/comment?itineraryId=${id}`)
-            .then((res) => {
-                setComments(res.data.response);
-            },);
-    },);
-    async function submit(e) {
+        getComments()    
+    }, [reload])
+
+    // Funciones
+    async function getComments() {
+        let res = await dispatch(commentsActions.getCommentItinerary(idShow))
+        setListComments(res.payload.data)
+        setReload(false)
+    }
+    function submit(e) {
         Swal.fire({
             title: '¿Delete Comment?',
             showDenyButton: false,
@@ -35,7 +48,12 @@ export default function Comments(prop) {
             denyButtonText: `No, i miss something...`,
         }).then((result) => {
             if (result.isConfirmed) {
-                deleteComment(e)
+                let datos = {
+                    token: tokenKey,
+                    id: e
+                }
+             dispatch(commentsActions.deleteComment(datos))
+             setReload(!reload)
             }
         })
     }
@@ -49,24 +67,24 @@ export default function Comments(prop) {
             denyButtonText: `No, i miss something...`,
         }).then((result) => {
             if (result.isConfirmed) {
-                editComments(e)
+                const newUpdate = {
+                    comment: commentary,
+                    date: date.current,
+                    itineraryId: showId.current
+                }
+                let datos = { 
+                    token: tokenKey,
+                    id: e,
+                    newUpdate: newUpdate
+                }
+                dispatch(commentsActions.editComment(datos))
                 setEdit(false)
+                setReload(!reload)
             }
         })
     }
-    async function deleteComment(e) {
-        await axios.delete(`${BASE_URL}/api/comment/${e}`, { headers: { Authorization: `Bearer ${tokenKey}` } })
-    }
-    async function editComments(e) {
-        const newUpdate = {
-            comment: commentary,
-            date: date.current,
-            itineraryId: itineraryId.current
-        }
-        await axios.put(`${BASE_URL}/api/comment/${e}`, newUpdate, { headers: { Authorization: `Bearer ${tokenKey}` } })
-    }
     return (
-        comments.map((e) => {
+        listComments.map((e) => {
             return (
                 <div className={`comment-box ${token === e.userId._id ? "own-comment" : ""}`}>
                     <div className='profile-comment-box'>
@@ -86,14 +104,15 @@ export default function Comments(prop) {
                             <div className={`none ${token === e.userId._id ? "own-comment-btns" : ""}`}>
                                 {editComment ?
                                     <form id="myform">
-                                    <input
-                                     ref= { comment } 
-                                     type="text"
-                                     onKeyUp={(e) => {
-                                        setCommentary(e.target.value)}
-                                     }
-                                     />
-                                    <button onClick={(b) => edit(e._id, b)} form="myform" >Confirm edit</button>
+                                        <input
+                                            ref={comment}
+                                            type="text"
+                                            onKeyUp={(e) => {
+                                                setCommentary(e.target.value)
+                                            }
+                                            }
+                                        />
+                                        <button onClick={(b) => edit(e._id, b)} form="myform" >Confirm edit</button>
                                     </form>
                                     :
                                     ""}
@@ -104,9 +123,7 @@ export default function Comments(prop) {
                                 { editComment ? setEdit(false) : setEdit(true) }
                             }}>Edit</button>
                             <button onClick={a => {
-
                                 submit(e._id)
-
                             }}>Delete</button>
                         </div>
                     </div>

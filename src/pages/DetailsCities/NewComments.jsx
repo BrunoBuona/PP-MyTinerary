@@ -31,7 +31,7 @@ export default function NewComments(prop) {
         }
         async function publishComment(){
             const dataComment = {
-                showId: itineraryIdRef.current,
+                itineraryId: itineraryIdRef.current,
                 comment: commentRef.current.value,  
                 date: dateRef.current,
             }

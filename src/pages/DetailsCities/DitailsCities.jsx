@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import { useState } from 'react'
 import { BASE_URL } from '../../api/url'
-import NewComments from "../../components/DetailsHotel/NewComments";
+import NewComments from "./NewComments";
 import Comments from './Comments'
 
 

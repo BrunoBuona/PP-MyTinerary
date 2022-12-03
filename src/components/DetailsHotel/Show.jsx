@@ -9,16 +9,13 @@ export function ShowPrinter() {
     let [push, setPush] = useState(false);
     let { id } = useParams()
     const [shows,setShows] = useState([])
-    let reload = false
+    const [reload, setReload] = useState(true)
     useEffect(() => {
       axios.get(`${BASE_URL}/api/shows?hotelId=${id}`)
       .then((res) => {
         setShows(res.data.response);
       });
-    },[reload]);
-
-  
-
+    },[]);
     return (
             shows.map((e)=> {
                 return(
