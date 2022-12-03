@@ -91,7 +91,7 @@ function Header() {
                     </div>
                     <div className="bottonHome">
                         <p className="parraf">New C y H</p>
-                        <NavBar4 name7="New Hotel" name6="New City" />
+                        <NavBar4 name7="New Hotel" name6="New City" name8="New Reactions"/>
                     </div>
                     <div className="bottonHome">
                         <p className="parraf">Account</p>

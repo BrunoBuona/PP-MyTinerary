@@ -1,9 +1,9 @@
 import React from 'react'
+import { useEffect, useState, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import reactionActions from '../../redux/actions/reactionActions'
 import Swal from 'sweetalert2'
-import { useRef , useEffect, useState} from 'react'
-/* import '../Input/input.css' */
+import './newReaction.css'
 import axios from "axios";
 import {BASE_URL} from '../../api/url'
 
@@ -12,8 +12,8 @@ export default function NewReactionC() {
 
     const dispatch = useDispatch()
     let token = useSelector((store) => store.loginReducer.token);
+    const { tokenKey } = useSelector((store) => store.tokenReducer)
     console.log(token);
-    const userId = token.id
     const { createReaction } = reactionActions
     let [itinerary, setItinerary] = useState([]);
     const formRef = useRef()
@@ -24,22 +24,17 @@ export default function NewReactionC() {
 
 
 
-   useEffect(() => {
-        axios.get(`${BASE_URL}/api/itineraries`, { 
-              headers: {
-                Authorization: `Bearer${localStorage.getItem("token")}`,
-              },
-            })
-            .then((res) => {
-            setItinerary(res.data.response)})
-            .catch((err) => err.message);
-            
-    },[]);
+    useEffect(() => {
+        axios.get(`${BASE_URL}/api/itineraries`)
+            .then((res) => setItinerary(res.data.response))
+            console.log('estoy en new reaction');
+    },[])
 
-    function sendForm(e) {
+    async function sendForm(e) {
         e.preventDefault()
+        console.log('hola estoy aca');
         let data = {
-            token,
+            tokenKey,
             reaction: {
                 name: nameRef.current.value,
                 icon: iconRef.current.value,
@@ -48,6 +43,7 @@ export default function NewReactionC() {
                 userId: []
             }
         }
+        console.log(data);
         Swal.fire({
             icon: 'info',
             title: 'Do you want to create this reaction?',
@@ -60,6 +56,7 @@ export default function NewReactionC() {
                 try {
                     if (result.isConfirmed) {
                         let res = await dispatch(createReaction(data))
+                        console.log(res);
                         if (res.payload.success) {
                             Swal.fire({
                                 icon: 'success',
@@ -83,25 +80,26 @@ export default function NewReactionC() {
     }
 
     return (
-    <div className='contenedor-form'>
-    <form className='form-new-react' ref={formRef}>       
-          <label className='label-form-new'>
+    <div className='contenedor-form2'>
+        <h1 className='title-reactions'>New Reactions</h1>
+    <form className='form-new-reac' ref={formRef}>       
+          <label className='label-formnew'>
             Name:
-            <input className='inputin-show' type='text' id='nameInput' ref={nameRef} required/>
+            <input className='inputinShow' type='text' id='nameInput' ref={nameRef} required/>
           </label>
-          <label className='label-form-new'>
+          <label className='label-formnew'>
             Icon:
-            <input className='inputin-show' type='text' id='iconInput' ref={iconRef} required/>
+            <input className='inputinShow' type='text' id='iconInput' ref={iconRef} required/>
           </label>
-          <label className='label-form-new'>
+          <label className='label-formnew'>
             Icon back:
-            <input className='inputin-show' type='text' id='iconbackInput' ref={iconBackRef} required />
+            <input className='inputinShow' type='text' id='iconbackInput' ref={iconBackRef} required />
           </label>
           <select
-                    type="text"
-                    placeholder="itineraries ID"
-                    className='form__input_show'
-                    ref={itineraryIdRef}
+                type="text"
+                placeholder="itineraries ID"
+                className='form__inputShow'
+                ref={itineraryIdRef}
                 >
                 <option value="">Choose an Itinerary</option>
                     {itinerary.map((itinerary) =>
@@ -109,7 +107,7 @@ export default function NewReactionC() {
                     )}
            </select>
           <div className='container-submit-react'>
-            <input onClick={sendForm} className="submit-signup" type='button' value='Submit' />
+            <input onClick={sendForm} className="submitsignup" type='button' value='Submit' />
           </div>
     </form>
     </div>    

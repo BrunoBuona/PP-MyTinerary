@@ -6,7 +6,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { BASE_URL } from '../../api/url'
 import Comments from './Comments'
-
+import CardItinerary from './CardItinerary'
 
 const DitailsCities = () => {
 
@@ -48,18 +48,15 @@ const DitailsCities = () => {
                             <div className='main-details-City'>
                                 <h3 className='h3-actividades'>Activity!</h3>
                                 <div className="main-space">
-                                    <div className='MainHotel'>
-                                        <div className='left-mh'>
-                                            <img className='img-mh' src={e.photo[0]} alt={e.name} />
-                                            <img className='img-mh' src={e.photo[1]} alt={e.name} />
-                                            <img className='img-mh' src={e.photo[2]} alt={e.name} />
-                                        </div>
-                                        <div className='right-mh'>
-                                            <h3>{e.name}</h3>
-                                            <p>{e.description}</p>
-                                            <p>Price: {e.price} $USD</p>
-                                        </div>
-                                    </div>
+                                <CardItinerary
+                                key={e._id}
+                                id={e._id}
+                                name={e.name}
+                                photo={e.photo}
+                                price={e.price}
+                                duration={e.duration}
+                                description={e.description} 
+                                />
                                 </div>
                                 <div className='center-all'>
                                   <Comments id={e._id} />
@@ -75,4 +72,6 @@ const DitailsCities = () => {
 
 }
 export default DitailsCities
+
+
 
