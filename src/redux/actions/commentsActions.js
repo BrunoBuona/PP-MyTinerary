@@ -11,7 +11,9 @@ const getCommentItinerary = createAsyncThunk("getComment", async (id) => {
   const res = await axios.get(`${BASE_URL}/api/comment?itineraryId=${id}`);
   return res.data
 });
-
+const reload = createAsyncThunk("reload", async (booleano) => {
+  return booleano
+});
 const createComment = createAsyncThunk("createComment", async ({token, data}) => {
   try {
     const res = await axios.post(`${BASE_URL}/api/comment`, data, { headers: { Authorization: `Bearer ${token}` } });
@@ -58,6 +60,7 @@ const commentsActions = {
   createComment,
   deleteComment,
   editComment,
+  reload,
 };
 
 export default commentsActions;
