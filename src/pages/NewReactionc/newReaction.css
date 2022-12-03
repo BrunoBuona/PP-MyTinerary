@@ -1,0 +1,42 @@
+.form-new-reac{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    justify-content: center;
+    background-image: url("https://img.freepik.com/free-vector/night-ocean-landscape-full-moon-stars-shine_107791-7397.jpg?w=2000");
+}
+.label-formnew{
+    padding: 1rem;
+}
+
+.inputinShow{
+    margin: .5rem;
+}
+
+.form__inputShow{
+    padding: 3px;
+    width: 30%;
+    background-color: white;
+    color: black;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 3px 3px 5px rgb(3 3 3 / 65%);
+    text-align: center;
+}
+
+.submitsignup{
+    padding: 1rem;
+}
+
+.submitsignup:hover{
+    background-color: crimson;
+}
+
+.title-reactions{
+    text-align: center;
+    color: aliceblue;
+    margin: 1rem;
+}

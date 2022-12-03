@@ -20,7 +20,7 @@ import ViewProfile1 from "./components/Profile/ViewProfile1.jsx";
 import ViewProfile2 from "./components/Profile/ViewProfile2.jsx";
 import NewShows from "./components/NewShow/NewShow";
 import NewItineraries from "./pages/NewItineraries/NewItineraries"
-
+import NewReactionC from "./pages/NewReactionc/NewReactionC";
 
 
 

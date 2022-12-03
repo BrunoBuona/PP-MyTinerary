@@ -5,6 +5,9 @@
 .main-details-City{
     min-height: 50vh;
     background-color: rgb(22, 22, 22);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
 }
 .main-space{
@@ -60,7 +63,22 @@
     padding: 20px;
     text-align: center;
     gap: 2rem;
+    color: rgb(0, 0, 0);
 }
+
+.right-mh-2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    gap: 2rem;
+    color: aliceblue;
+}
+
 
 .btn{
   
@@ -72,7 +90,7 @@
     font-size: 2rem;
 }
 
-@media screen and (max-width: 770px){
+@media screen and (max-width: 800px){
     .main-details{
         height: 10rem;
         background-color: rgb(22, 22, 22);
@@ -83,6 +101,7 @@
     }
     .MainHotel{
         flex-direction: column;
+        width: 27rem;
     }
     .right-mh{
         width: 100%;

@@ -22,7 +22,6 @@ const rootReducer = {
     reactionReducer,
     tokenReducer,
     commentReducer
-
 }
 
 export default rootReducer;

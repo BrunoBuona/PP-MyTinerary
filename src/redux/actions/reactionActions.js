@@ -3,9 +3,9 @@ import axios from "axios";
 import {BASE_URL} from '../../api/url'
 
 const createReaction = createAsyncThunk("createReaction", async (data) => {
-    let headers = { headers: { 'Authorization': `Bearer ${data.token}` } }
+    let headers = { headers: { 'Authorization': `Bearer ${data.tokenKey}` } }
     try{
-        const res = await axios.post(`${BASE_URL}/api/reactions`, data.reaction, headers)
+        const res = await axios.post(`${BASE_URL}/api/reactions`, data.reaction,headers)
         console.log(res)
         return res.data
     }catch(error){
@@ -16,8 +16,9 @@ const createReaction = createAsyncThunk("createReaction", async (data) => {
 })
 
 const getReactions = createAsyncThunk("getReactions", async (id) => {
+    /* let headers = { headers: { 'Authorization': `Bearer ${data.tokenKey}` } } */
     try{
-        const res = await axios.get(`${BASE_URL}/api/reactions?itinerariesId=${id}`)
+        const res = await axios.get(`${BASE_URL}/api/reactions?itineraryId=${id}`)
         return res.data
     }catch(error){
         return {
@@ -28,9 +29,9 @@ const getReactions = createAsyncThunk("getReactions", async (id) => {
 
 
 const updateReaction = createAsyncThunk("updateReaction", async (data) => {
-    let headers = { headers: { 'Authorization': `Bearer ${data.token}` } }
+    let headers = { headers: { 'Authorization': `Bearer ${data.tokenKey}` } }
     try{
-        const res = await axios.put(`${BASE_URL}/api/reactions?name=${data.name}&itinerariesId=${data.id}`, null, headers)
+        const res = await axios.put(`${BASE_URL}/api/reactions?name=${data.name}&itineraryId=${data.id}`, null, headers)
         return res.data
     }catch(error){
         return {

@@ -55,19 +55,18 @@ export default function NewItineraries() {
                 Swal.fire({
                     icon: 'error',
                     title: 'We found an error...',
-                    text: `Errors: ${res.data.message}`,
+                    text: 'Errors',
                 })
             }
         } catch (err) {
             if(err.response.data.message === `shows validation failed: hotelId: Cast to ObjectId failed for value "" (type string) at path "hotelId" because of "BSONTypeError"`){
                 Swal.fire({
                     icon: 'error',
-                    title: '¡You must select a hotel!',
+                    title: '¡You must select a itinerary!',
                   })
         }
     }}
     return (
-
         <form ref={formRef} className="form-hotel3" onSubmit={submit}>
             <div className="form-body3">
                 <h1 className='title'>New Itinerary</h1>
